@@ -36,7 +36,7 @@ label {
 /* Select & Input */
 .select{
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px 10px;
   border-radius: 10px;
   border: none;
   background: #d6d6d6;
@@ -47,7 +47,7 @@ label {
 
 .input {
   width: 100%;
-  padding: 14px 0px;
+  padding: 14px 10px;
   border-radius: 10px;
   border: none;
   background: #d6d6d6;
