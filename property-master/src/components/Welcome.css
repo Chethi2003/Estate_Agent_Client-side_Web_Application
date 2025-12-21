@@ -2,13 +2,16 @@
   text-align: center;
   margin-bottom: 2rem;
   font-family:Arial, Helvetica, sans-serif;
-
+  background-image: url("../assets/luxuryestate.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 15% ;
 }
 
 .welcome-title {
   font-size: 200%;
   font-weight: bolder;
-  background: linear-gradient(to top, #070093, #31006c);
+  background: linear-gradient(to top, #1a1a1a, #777777);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
