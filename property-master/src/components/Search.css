@@ -1,0 +1,103 @@
+.search-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: #333333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.search-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+.form-group {
+  margin-bottom: 25px;;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Select & Input */
+.select{
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #f4f4f4;
+  font-size: 14px;
+  outline: none;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 0px;
+  border-radius: 10px;
+  border: none;
+  background: #f4f4f4;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Range Slider */
+.range {
+  width: 100%;
+  margin-top: 10px;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #000000, #000000);
+}
+
+.range::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Button */
+.search-button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(90deg, #000000, #0a0a2a);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
