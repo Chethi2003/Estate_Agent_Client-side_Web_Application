@@ -1,24 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .welcome-container {
   text-align: center;
   margin-bottom: 2rem;
   font-family:Arial, Helvetica, sans-serif;
   background-image: url("../assets/luxuryestate.jpg");
+  font-family: "Roboto", sans-serif;
   background-size: cover;
   background-position: center;
-  padding: 15% ;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+  padding: 10% ;
 }
 
 .welcome-title {
-  font-size: 200%;
+  font-size: 400%;
   font-weight: bolder;
-  background: linear-gradient(to top, #1a1a1a, #777777);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   
 }
 
 .welcome-subtitle {
-  font-size: 110%;
-  color: rgb(71, 71, 71);
+  font-size: 120%;
+  color: rgb(238, 238, 238);
 }
