@@ -1,12 +1,18 @@
 .welcome-title {
-  font-size: 2.5rem;
+  font-size: 190%;
+  font-weight: bolder;
   margin-bottom: 1rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: -10px;
-  color: rgb(0, 0, 0);
+  background: linear-gradient(to top, #070093, #31006c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  
 }
 
 .welcome-subtitle {
-  font-size: 1.2rem;
-  color: rgb(0, 0, 0);
+  font-size: 110%;
+  color: rgb(71, 71, 71);
 }
