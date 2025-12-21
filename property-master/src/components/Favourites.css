@@ -1,0 +1,52 @@
+.favourites-card {
+  width: 420px;
+  margin: 0px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px 40px 40px 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Header */
+.favourites-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.favourites-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  
+}
+
+.heart-icon {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Empty state */
+.favourites-empty {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.heart-large {
+  font-size: 70px;
+  color: #cfd3da;
+  margin-bottom: 20px;
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+}

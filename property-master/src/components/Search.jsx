@@ -8,7 +8,7 @@ function Search() {
   return (
     <div className="search-container">
       <h2 className="search-title">
-        <span className="search-icon">🔍</span> Search Properties
+        <span className="search-icon">🔍︎</span> Search Properties
       </h2>
 
       {/* Property Type */}

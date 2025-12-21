@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Welcome from './components/Welcome.jsx'
 import Search from './components/Search.jsx'
+import Favourites from './components/Favourites.jsx'
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
         <Welcome />
       </div>
       
-      <div className="search">
-      <Search />
+      <div className="main-content">
+        <Search />
+        <Favourites />
       </div>
     </>
   )
