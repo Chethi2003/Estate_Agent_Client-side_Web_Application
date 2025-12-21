@@ -1,10 +1,11 @@
 .search-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
+  width: 700px;
+  margin: 0px auto;
+  padding: 10px 40px 40px 40px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .search-title {
@@ -103,7 +104,6 @@ label {
 }
 
 .search-button:hover {
-  opacity: 0.9;
   transition: 0.25s;
   transform: scale(1.02);
 }

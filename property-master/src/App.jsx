@@ -7,8 +7,13 @@ function App() {
 
   return (
     <>
-      <Welcome />
+      <div className="welcome">
+        <Welcome />
+      </div>
+      
+      <div className="search">
       <Search />
+      </div>
     </>
   )
 }
