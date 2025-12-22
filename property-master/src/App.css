@@ -4,18 +4,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
-header {
-  margin-top: 0px;
-
-}
-
-.welcome {
-  width: 100vw;
-  text-align: center;
-}
-
-
 .main-content{
   display: flex;
   gap: 3%;
@@ -23,6 +11,5 @@ header {
   align-items: flex-start;
   font-family:Arial, Helvetica, sans-serif;
 }
-
 
 
