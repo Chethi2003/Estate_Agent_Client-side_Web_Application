@@ -10,6 +10,7 @@ function Navigation() {
                 <li className="nav-item">Search</li>
                 <li className="nav-item">Favourites</li>
                 <li className="nav-item">Contact</li>
+                <li className="nav-item">Sign in</li>
             </ul>
         </nav>
     );
