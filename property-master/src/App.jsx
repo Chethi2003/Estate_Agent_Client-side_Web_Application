@@ -1,25 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import Navigation from './components/Navigation.jsx'
-import Welcome from './components/Welcome.jsx'
-import Search from './components/Search.jsx'
-import Favourites from './components/Favourites.jsx'
-import Footer from './components/Footer.jsx'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
-
   return (
-    <>
-      <Navigation />
-        <Welcome />
-      <div className="main-content">
-        <Search />
-        <Favourites />
-      </div>
-      <Footer />
-      
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
