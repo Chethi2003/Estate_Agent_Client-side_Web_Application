@@ -1,19 +1,37 @@
 import React from "react";
-import './Navigation.css';
+import { Link } from "react-router-dom";
+import "./Navigation.css";
 
 function Navigation() {
-    return (
-        <nav className="navigation-bar">
-            <div className="nav-logo">PropertyMaster</div>
-            <ul className="nav-links">
-                <li className="nav-item">Home</li>
-                <li className="nav-item">Search</li>
-                <li className="nav-item">Favourites</li>
-                <li className="nav-item">Contact</li>
-                <li className="nav-item">Sign in</li>
-            </ul>
-        </nav>
-    );
+  return (
+    <nav className="navigation-bar">
+      <div className="nav-logo">
+        <Link to="/">PropertyMaster</Link>
+      </div>
+
+      <ul className="nav-links">
+        <li className="nav-item">
+          <Link to="/">Home</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/search">Search</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/favourites">Favourites</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/contact">Contact</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/signin">Sign in</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navigation;

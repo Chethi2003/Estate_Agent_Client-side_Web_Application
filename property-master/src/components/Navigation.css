@@ -8,6 +8,20 @@
   color: #ffffff;
 }
 
+/* Remove default link styles */
+.nav-links a,
+.nav-logo a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+/* Optional: hover effect stays same */
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+
 .nav-logo {
   font-weight: 700;
   font-size: 1.2rem;
