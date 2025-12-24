@@ -42,11 +42,14 @@ function PropertyCard({ property }) {
         ♥
       </button>
 
-      <img
-        src={`/${property.picture}`}
-        alt={property.type}
-        className="property-card-image"
-      />
+      <div className="property-card-image-wrapper">
+  <img
+    src={`/${property.picture}`}
+    alt={property.type}
+    className="property-card-image"
+  />
+</div>
+
 
       <div className="property-card-content">
         <h3 className="property-card-title">{property.type}</h3>

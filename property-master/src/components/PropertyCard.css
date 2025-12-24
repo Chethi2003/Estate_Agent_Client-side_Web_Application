@@ -30,3 +30,28 @@
 .property-card {
   position: relative;
 }
+
+/* Card */
+.property-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* IMAGE WRAPPER – controls height */
+.property-card-image-wrapper {
+  width: 100%;
+  height: 200px;        /* 🔥 uniform height */
+  overflow: hidden;
+}
+
+/* IMAGE – fills wrapper */
+.property-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 🔥 MOST IMPORTANT */
+  display: block;
+}
