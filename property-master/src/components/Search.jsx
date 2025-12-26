@@ -1,26 +1,50 @@
 import React, { useState } from "react";
 import "./Search.css";
 
+import Select from "react-select";
+import Slider from "rc-slider";
+import DatePicker from "react-datepicker";
+
+import "rc-slider/assets/index.css";
+import "react-datepicker/dist/react-datepicker.css";
+
 function Search({ onSearch }) {
   const [price, setPrice] = useState(1500000);
   const [bedrooms, setBedrooms] = useState(5);
-  const [type, setType] = useState("Any");
-  const [postcode, setPostcode] = useState("");
+  const [type, setType] = useState(null);
+  const [dateFrom, setDateFrom] = useState(null);
+  const [postcode, setPostcode] = useState(null);
 
   const handleSearch = () => {
-    // 🧠 prepare filters (not applied yet)
     const filters = {
       price,
       bedrooms,
-      type,
-      postcode,
+      type: type ? type.value : "Any",
+      postcode: postcode ? postcode.value : "",
+      dateFrom
     };
 
-    // ✅ call parent ONLY if provided (safe)
     if (onSearch) {
       onSearch(filters);
     }
   };
+
+  const typeOptions = [
+    { value: "Any", label: "Any" },
+    { value: "House", label: "House" },
+    { value: "Flat", label: "Flat" },
+    { value: "Detached House", label: "Detached House" },
+    { value: "Apartment", label: "Apartment" },
+    { value: "Bungalow", label: "Bungalow" }
+  ];
+
+  const postcodeOptions = [
+    { value: "BR1", label: "BR1" },
+    { value: "BR5", label: "BR5" },
+    { value: "BR6", label: "BR6" },
+    { value: "BR7", label: "BR7" },
+    { value: "DA14", label: "DA14" }
+  ];
 
   return (
     <div className="search-container">
@@ -31,59 +55,60 @@ function Search({ onSearch }) {
       {/* Property Type */}
       <div className="form-group">
         <label>Property Type</label>
-        <select
-          className="select"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option>Any</option>
-          <option>House</option>
-          <option>Flat</option>
-          <option>Detached House</option>
-          <option>Apartment</option>
-          <option>Bungalow</option>
-        </select>
+        <Select
+          options={typeOptions}
+          onChange={setType}
+          isClearable
+        />
       </div>
 
-      {/* Price Range */}
+      {/* Price */}
       <div className="form-group">
-        <label>Price Range: £0 - £{Number(price).toLocaleString()}</label>
-        <input
-          type="range"
-          min="0"
-          max="1500000"
+        <label>Max Price: £{price.toLocaleString()}</label>
+        <Slider
+          min={0}
+          max={1500000}
+          step={25000}
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          className="range"
+          onChange={setPrice}
         />
       </div>
 
       {/* Bedrooms */}
       <div className="form-group">
-        <label>Bedrooms: 1 - {bedrooms}</label>
-        <input
-          type="range"
-          min="1"
-          max="5"
+        <label>Bedrooms: 1 – {bedrooms}</label>
+        <Slider
+          min={1}
+          max={5}
+          step={1}
           value={bedrooms}
-          onChange={(e) => setBedrooms(e.target.value)}
-          className="range"
+          onChange={setBedrooms}
+        />
+      </div>
+
+      {/* Date Added */}
+      <div className="form-group">
+        <label>Date Added (From)</label>
+        <DatePicker
+          selected={dateFrom}
+          onChange={(date) => setDateFrom(date)}
+          dateFormat="dd/MM/yyyy"
+          placeholderText="Select date"
+          isClearable
         />
       </div>
 
       {/* Postcode */}
       <div className="form-group">
         <label>Postcode Area</label>
-        <input
-          type="text"
-          placeholder="e.g. NW1, SW11"
-          className="input"
-          value={postcode}
-          onChange={(e) => setPostcode(e.target.value)}
+        <Select
+          options={postcodeOptions}
+          onChange={setPostcode}
+          isClearable
         />
       </div>
 
-      {/* Button */}
+      {/* Button (buttons are allowed to be native) */}
       <button className="search-button" onClick={handleSearch}>
         Search Properties
       </button>

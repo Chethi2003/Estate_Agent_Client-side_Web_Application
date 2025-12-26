@@ -1,12 +1,14 @@
+/* ===== Container ===== */
 .search-container {
   width: 700px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 10px 40px 40px 40px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* ===== Title ===== */
 .search-title {
   display: flex;
   align-items: center;
@@ -21,71 +23,131 @@
   font-size: 20px;
 }
 
+/* ===== Form Group ===== */
 .form-group {
-  margin-bottom: 25px;;
+  margin-bottom: 25px;
 }
 
-label {
+.form-group label {
   display: block;
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #000;
 }
 
-/* Select & Input */
-.select{
-  width: 100%;
-  padding: 14px 10px;
-  border-radius: 10px;
-  border: none;
-  background: #d6d6d6;
-  font-size: 14px;
-  outline: none;
-  color: #000000;
+/* ===== React Select ===== */
+.react-select__control {
+  min-height: 48px;
+  border-radius: 10px !important;
+  border: none !important;
+  background: #d6d6d6 !important;
+  box-shadow: none !important;
+  cursor: pointer;
 }
 
-.input {
-  width: 100%;
-  padding: 14px 10px;
-  border-radius: 10px;
-  border: none;
-  background: #d6d6d6;
-  font-size: 14px;
-  outline: none;
-  color: #000000;
+.react-select__control--is-focused {
+  border: 2px solid #000 !important;
 }
 
-/* Range Slider */
-.range {
-  width: 100%;
-  margin-top: 10px;
-  appearance: none;
+.react-select__value-container {
+  padding: 2px 12px !important;
+}
+
+.react-select__single-value {
+  font-size: 14px;
+  color: #000;
+}
+
+.react-select__menu {
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.react-select__option {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.react-select__option--is-focused {
+  background: #ececec;
+}
+
+.react-select__option--is-selected {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== rc-slider ===== */
+.rc-slider {
+  margin-top: 12px;
+}
+
+.rc-slider-rail {
+  background: #d6d6d6;
   height: 6px;
   border-radius: 5px;
-  background: linear-gradient(to right,#a5b9ff, #000000);
 }
 
-.range::-webkit-slider-thumb {
-  appearance: none;
+.rc-slider-track {
+  background: linear-gradient(to right, #a5b9ff, #000000);
+  height: 6px;
+}
+
+.rc-slider-handle {
   width: 18px;
   height: 18px;
+  margin-top: -6px;
   background: #ffffff;
   border: 2px solid #000;
-  border-radius: 50%;
+  opacity: 1;
+}
+
+.rc-slider-handle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== Date Picker ===== */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #d6d6d6;
+  font-size: 14px;
+  outline: none;
+  color: #000;
   cursor: pointer;
 }
 
-.range::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  background: #ffffff;
-  border: 2px solid #000;
-  border-radius: 50%;
-  cursor: pointer;
+.react-datepicker {
+  border-radius: 10px;
+  border: none;
 }
 
-/* Button */
+.react-datepicker__header {
+  background: #000;
+  color: #fff;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #fff;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== Button ===== */
 .search-button {
   width: 100%;
   padding: 16px;
