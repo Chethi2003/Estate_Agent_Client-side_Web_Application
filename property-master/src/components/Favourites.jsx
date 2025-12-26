@@ -1,6 +1,6 @@
 import "./Favourites.css";
 
-function Favourites() {
+function Favourites({ favourites = [] }) {
   return (
     <div className="favourites-card">
       <div className="favourites-header">
@@ -8,13 +8,15 @@ function Favourites() {
         <h3>Favourite Properties</h3>
       </div>
 
-      <div className="favourites-empty">
-        <div className="heart-large">♡</div>
-        <p className="empty-title">No favourite properties yet</p>
-        <p className="empty-subtitle">
-          Click the heart icon on any property to save it here
-        </p>
-      </div>
+      {favourites.length === 0 && (
+        <div className="favourites-empty">
+          <div className="heart-large">♡</div>
+          <p className="empty-title">No favourite properties yet</p>
+          <p className="empty-subtitle">
+            Click the heart icon on any property to save it here
+          </p>
+        </div>
+      )}
     </div>
   );
 }

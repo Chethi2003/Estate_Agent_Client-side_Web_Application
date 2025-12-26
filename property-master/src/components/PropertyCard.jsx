@@ -1,21 +1,40 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./PropertyCard.css";
 
-function PropertyCard({ property }) {
+function PropertyCard({
+  property,
+  isFavourite: isFavouriteProp,
+  onToggleFavourite,
+}) {
   const navigate = useNavigate();
+
+  // 🔁 local fallback state (for now)
   const [isFavourite, setIsFavourite] = useState(false);
 
-  // Load favourites on mount
+  // ✅ Sync from props OR localStorage
   useEffect(() => {
-    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-    setIsFavourite(favourites.includes(property.id));
-  }, [property.id]);
+    if (typeof isFavouriteProp === "boolean") {
+      setIsFavourite(isFavouriteProp);
+    } else {
+      const favourites =
+        JSON.parse(localStorage.getItem("favourites")) || [];
+      setIsFavourite(favourites.includes(property.id));
+    }
+  }, [isFavouriteProp, property.id]);
 
-  const toggleFavourite = (e) => {
+  const handleFavouriteClick = (e) => {
     e.stopPropagation(); // 🚫 prevent card click
 
-    let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    // 🧠 If parent controls it, delegate
+    if (onToggleFavourite) {
+      onToggleFavourite(property.id);
+      return;
+    }
+
+    // 🧠 Otherwise use localStorage (current behaviour)
+    let favourites =
+      JSON.parse(localStorage.getItem("favourites")) || [];
 
     if (favourites.includes(property.id)) {
       favourites = favourites.filter((id) => id !== property.id);
@@ -36,20 +55,19 @@ function PropertyCard({ property }) {
       {/* ❤️ Favourite Icon */}
       <button
         className={`favourite-btn ${isFavourite ? "active" : ""}`}
-        onClick={toggleFavourite}
+        onClick={handleFavouriteClick}
         aria-label="Add to favourites"
       >
         ♥
       </button>
 
       <div className="property-card-image-wrapper">
-  <img
-    src={`/${property.picture}`}
-    alt={property.type}
-    className="property-card-image"
-  />
-</div>
-
+        <img
+          src={`/${property.picture}`}
+          alt={property.type}
+          className="property-card-image"
+        />
+      </div>
 
       <div className="property-card-content">
         <h3 className="property-card-title">{property.type}</h3>
