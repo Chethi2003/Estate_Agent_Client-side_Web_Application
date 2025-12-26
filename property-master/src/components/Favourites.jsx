@@ -1,6 +1,10 @@
 import "./Favourites.css";
 
-function Favourites({ favourites = [] }) {
+function Favourites({ favourites = [], allProperties = [] }) {
+  const favouriteProperties = allProperties.filter((property) =>
+    favourites.includes(property.id)
+  );
+
   return (
     <div className="favourites-card">
       <div className="favourites-header">
@@ -8,7 +12,7 @@ function Favourites({ favourites = [] }) {
         <h3>Favourite Properties</h3>
       </div>
 
-      {favourites.length === 0 && (
+      {favouriteProperties.length === 0 ? (
         <div className="favourites-empty">
           <div className="heart-large">♡</div>
           <p className="empty-title">No favourite properties yet</p>
@@ -16,6 +20,15 @@ function Favourites({ favourites = [] }) {
             Click the heart icon on any property to save it here
           </p>
         </div>
+      ) : (
+        favouriteProperties.map((property) => (
+          <div key={property.id} className="favourite-item">
+            <p>{property.type}</p>
+            <span>
+              £{property.price.toLocaleString()}
+            </span>
+          </div>
+        ))
       )}
     </div>
   );

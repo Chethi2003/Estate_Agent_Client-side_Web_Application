@@ -11,14 +11,14 @@ import PropertyList from "../components/PropertyList";
 import propertiesData from "../data/properties.json";
 
 function Home() {
-  // ✅ extract the array ONCE
   const allProperties = propertiesData.properties;
 
   const [filteredProperties, setFilteredProperties] =
     useState(allProperties);
 
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState([]); // ❤️ IDs
 
+  // 🔍 search handler (already works)
   const handleSearch = (filters) => {
     const results = allProperties.filter((property) => {
       if (
@@ -45,6 +45,15 @@ function Home() {
     setFilteredProperties(results);
   };
 
+  // ❤️ toggle favourite
+  const toggleFavourite = (propertyId) => {
+    setFavourites((prev) =>
+      prev.includes(propertyId)
+        ? prev.filter((id) => id !== propertyId)
+        : [...prev, propertyId]
+    );
+  };
+
   return (
     <>
       <Navigation />
@@ -56,9 +65,13 @@ function Home() {
         <PropertyList
           properties={filteredProperties}
           favourites={favourites}
+          onToggleFavourite={toggleFavourite}
         />
 
-        <Favourites favourites={favourites} />
+        <Favourites
+          favourites={favourites}
+          allProperties={allProperties}
+        />
       </div>
 
       <Footer />

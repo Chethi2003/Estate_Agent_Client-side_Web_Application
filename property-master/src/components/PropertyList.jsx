@@ -1,6 +1,10 @@
-import PropertyCard from "./PropertyCard.jsx";
+import PropertyCard from "./PropertyCard";
 
-function PropertyList({ properties = [], favourites = [] }) {
+function PropertyList({
+  properties = [],
+  favourites = [],
+  onToggleFavourite,
+}) {
   return (
     <div className="results-grid">
       {properties.map((property) => (
@@ -8,6 +12,7 @@ function PropertyList({ properties = [], favourites = [] }) {
           key={property.id}
           property={property}
           isFavourite={favourites.includes(property.id)}
+          onToggleFavourite={onToggleFavourite}
         />
       ))}
     </div>

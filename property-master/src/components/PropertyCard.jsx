@@ -23,14 +23,13 @@ function PropertyCard({
     }
   }, [isFavouriteProp, property.id]);
 
-  const handleFavouriteClick = (e) => {
-    e.stopPropagation(); // 🚫 prevent card click
+const handleFavouriteClick = (e) => {
+  e.stopPropagation();
 
-    // 🧠 If parent controls it, delegate
-    if (onToggleFavourite) {
-      onToggleFavourite(property.id);
-      return;
-    }
+  if (onToggleFavourite) {
+    onToggleFavourite(property.id);
+    return;
+  }
 
     // 🧠 Otherwise use localStorage (current behaviour)
     let favourites =
@@ -53,13 +52,13 @@ function PropertyCard({
       onClick={() => navigate(`/property/${property.id}`)}
     >
       {/* ❤️ Favourite Icon */}
-      <button
-        className={`favourite-btn ${isFavourite ? "active" : ""}`}
-        onClick={handleFavouriteClick}
-        aria-label="Add to favourites"
-      >
-        ♥
-      </button>
+<button
+  className={`favourite-btn ${isFavourite ? "active" : ""}`}
+  onClick={handleFavouriteClick}
+>
+  ♥
+</button>
+
 
       <div className="property-card-image-wrapper">
         <img
