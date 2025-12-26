@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 
 function Search({ onSearch }) {
-  const [price, setPrice] = useState(1000000);
+  const [price, setPrice] = useState(1500000);
   const [bedrooms, setBedrooms] = useState(5);
   const [type, setType] = useState("Any");
   const [postcode, setPostcode] = useState("");
@@ -38,8 +38,10 @@ function Search({ onSearch }) {
         >
           <option>Any</option>
           <option>House</option>
+          <option>Flat</option>
+          <option>Detached House</option>
           <option>Apartment</option>
-          <option>Studio</option>
+          <option>Bungalow</option>
         </select>
       </div>
 
@@ -49,7 +51,7 @@ function Search({ onSearch }) {
         <input
           type="range"
           min="0"
-          max="1000000"
+          max="1500000"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           className="range"
