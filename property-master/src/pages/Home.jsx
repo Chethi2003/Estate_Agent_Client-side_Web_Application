@@ -16,21 +16,14 @@ function Home() {
   const [filteredProperties, setFilteredProperties] =
     useState(allProperties);
 
-  const [favourites, setFavourites] = useState([]); // ❤️ IDs
+  const [favourites, setFavourites] = useState([]);
 
-  // 🔍 search handler (already works)
   const handleSearch = (filters) => {
     const results = allProperties.filter((property) => {
-      if (
-        filters.type !== "Any" &&
-        property.type !== filters.type
-      )
+      if (filters.type !== "Any" && property.type !== filters.type)
         return false;
-
       if (property.price > Number(filters.price)) return false;
-
       if (property.bedrooms > Number(filters.bedrooms)) return false;
-
       if (
         filters.postcode &&
         !property.location
@@ -45,7 +38,6 @@ function Home() {
     setFilteredProperties(results);
   };
 
-  // ❤️ toggle favourite
   const toggleFavourite = (propertyId) => {
     setFavourites((prev) =>
       prev.includes(propertyId)
@@ -60,18 +52,23 @@ function Home() {
       <Welcome />
 
       <div className="main-content">
-        <Search onSearch={handleSearch} />
+        {/* TOP ROW */}
+        <div className="top-panel">
+          <Search onSearch={handleSearch} />
+          <Favourites
+            favourites={favourites}
+            allProperties={allProperties}
+          />
+        </div>
 
-        <PropertyList
-          properties={filteredProperties}
-          favourites={favourites}
-          onToggleFavourite={toggleFavourite}
-        />
-
-        <Favourites
-          favourites={favourites}
-          allProperties={allProperties}
-        />
+        {/* BOTTOM ROW */}
+        <div className="results-panel">
+          <PropertyList
+            properties={filteredProperties}
+            favourites={favourites}
+            onToggleFavourite={toggleFavourite}
+          />
+        </div>
       </div>
 
       <Footer />

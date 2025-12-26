@@ -12,7 +12,7 @@ function Properties() {
     <Navigation />
 
     <div className="properties-page">
-      <h1 className="properties-title">Available Properties</h1>
+      <h1 className="properties-title">All Properties</h1>
 
       <div className="properties-grid">
         {properties.map((property) => (
