@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data/properties.json";
 import "./PropertyPage.css";
-import Navigation from "../components/Navigation.jsx";  
+import Navigation from "../components/Navigation.jsx";
 
 function PropertyPage() {
- const { id } = useParams();
+  const { id } = useParams();
 
   const property = data.properties.find(
     (p) => p.id === id
@@ -15,22 +15,106 @@ function PropertyPage() {
     return <h2>Property not found</h2>;
   }
 
+  // Images from JSON
+  const images = property.images;
+  const [activeImage, setActiveImage] = useState(images[0]);
 
+  // Tabs state
+  const [activeTab, setActiveTab] = useState("description");
 
-    return (
-        <>
-        <Navigation />      
-        <div className="property-page">
-            <p>Property ID: {id}</p>
+  return (
+    <>
+      <Navigation />
 
-            <div className="property-details-container">
-                <p>{property.location}</p>
-<p>£{property.price.toLocaleString()}</p>
+      <div className="property-page">
 
-            </div>
+        {/* IMAGE GALLERY */}
+        <div className="image-gallery">
+          <img
+            src={`/${activeImage}`}
+            alt="Property"
+            className="main-image"
+          />
+
+          <div className="thumbnails">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={`/${img}`}
+                alt={`Thumbnail ${index + 1}`}
+                className={`thumbnail ${
+                  activeImage === img ? "active" : ""
+                }`}
+                onClick={() => setActiveImage(img)}
+              />
+            ))}
+          </div>
         </div>
-        </>
-    );
+
+        {/* PROPERTY SUMMARY */}
+        <div className="property-details-container">
+          <h1 className="property-title">{property.type}</h1>
+          <p className="property-location">{property.location}</p>
+          <p className="property-price">
+            £{property.price.toLocaleString()}
+          </p>
+        </div>
+
+        {/* TABS */}
+        <div className="tabs">
+          <button
+            className={activeTab === "description" ? "active" : ""}
+            onClick={() => setActiveTab("description")}
+          >
+            Description
+          </button>
+
+          <button
+            className={activeTab === "floor" ? "active" : ""}
+            onClick={() => setActiveTab("floor")}
+          >
+            Floor Plan
+          </button>
+
+          <button
+            className={activeTab === "map" ? "active" : ""}
+            onClick={() => setActiveTab("map")}
+          >
+            Map
+          </button>
+        </div>
+
+        {/* TAB CONTENT */}
+        <div className="tab-content">
+          {activeTab === "description" && (
+            <p>{property.description}</p>
+          )}
+
+          {activeTab === "floor" && (
+            <img
+              src={`/${property.floorPlan}`}
+              alt="Floor plan"
+              className="floorplan"
+            />
+          )}
+
+          {activeTab === "map" && (
+            <iframe
+              title="map"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                property.location
+              )}&output=embed`}
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              loading="lazy"
+            />
+          )}
+        </div>
+
+      </div>
+    </>
+  );
 }
 
 export default PropertyPage;
