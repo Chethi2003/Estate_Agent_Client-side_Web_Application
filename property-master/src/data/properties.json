@@ -9,6 +9,17 @@
       "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted kitchen/breakfast room and conservatory.",
       "location": "Petts Wood Road, Petts Wood, Orpington BR5",
       "picture": "images/prop1.webp",
+        "images": [
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp"
+  ],
+
+  "floorPlan": "images/floorplan.webp",
+
       "url": "properties/prop1.html",
       "added": {
         "month": "October",
@@ -25,6 +36,15 @@
       "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom garden flat with modern open-plan kitchen and private courtyard garden.",
       "location": "Crofton Road, Orpington BR6",
       "picture": "images/propflat.webp",
+              "images": [
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp"
+  ],
+  "floorPlan": "images/floorplan.webp",
       "url": "properties/prop2.html",
       "added": {
         "month": "September",
@@ -41,6 +61,17 @@
       "description": "Spacious four bedroom detached house located in a quiet residential area. Features include a large driveway, double garage, landscaped garden and open-plan living areas ideal for families.",
       "location": "Chislehurst Road, Chislehurst BR7",
       "picture": "images/prop3.webp",
+              "images": [
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp"
+  ],
+
+  "floorPlan": "images/floorplan.webp",
+
       "url": "properties/prop3.html",
       "added": {
         "month": "August",
@@ -58,6 +89,17 @@
       "location": "High Street, Bromley BR1",
       "picture": "images/propapart.webp",
       "url": "properties/prop4.html",
+              "images": [
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp"
+  ],
+
+  "floorPlan": "images/floorplan.webp",
+
       "added": {
         "month": "July",
         "day": 22,
@@ -73,6 +115,17 @@
       "description": "Well-maintained three bedroom bungalow offering single-level living. Features include a spacious living room, conservatory, mature garden and off-street parking.",
       "location": "Oak Avenue, Sidcup DA14",
       "picture": "images/propbung.webp",
+              "images": [
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp",
+    "images/propflat.webp"
+  ],
+
+  "floorPlan": "images/floorplan.webp",
+
       "url": "properties/prop5.html",
       "added": {
         "month": "June",
