@@ -56,9 +56,11 @@ function Home() {
         <div className="top-panel">
           <Search onSearch={handleSearch} />
           <Favourites
-            favourites={favourites}
-            allProperties={allProperties}
-          />
+  favourites={favourites}
+  allProperties={allProperties}
+  onAddFavourite={toggleFavourite}
+/>
+
         </div>
 
         {/* BOTTOM ROW */}

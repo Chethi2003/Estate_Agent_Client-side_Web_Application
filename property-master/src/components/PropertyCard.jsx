@@ -46,11 +46,19 @@ const handleFavouriteClick = (e) => {
     localStorage.setItem("favourites", JSON.stringify(favourites));
   };
 
+  const handleDragStart = (e) => {
+  e.dataTransfer.setData("propertyId", property.id);
+};
+
+
   return (
     <div
-      className="property-card"
-      onClick={() => navigate(`/property/${property.id}`)}
-    >
+  className="property-card"
+  draggable
+  onDragStart={handleDragStart}
+  onClick={() => navigate(`/property/${property.id}`)}
+>
+
       {/* ❤️ Favourite Icon */}
 <button
   className={`favourite-btn ${isFavourite ? "active" : ""}`}
