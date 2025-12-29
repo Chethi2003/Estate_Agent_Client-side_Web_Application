@@ -1,5 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {
+  FaMapMarkerAlt,
+  FaBed,
+  FaFileAlt,
+} from "react-icons/fa";
 import "./PropertyCard.css";
 
 function PropertyCard({
@@ -8,11 +13,8 @@ function PropertyCard({
   onToggleFavourite,
 }) {
   const navigate = useNavigate();
-
-  // 🔁 local fallback state (for now)
   const [isFavourite, setIsFavourite] = useState(false);
 
-  // ✅ Sync from props OR localStorage
   useEffect(() => {
     if (typeof isFavouriteProp === "boolean") {
       setIsFavourite(isFavouriteProp);
@@ -23,15 +25,14 @@ function PropertyCard({
     }
   }, [isFavouriteProp, property.id]);
 
-const handleFavouriteClick = (e) => {
-  e.stopPropagation();
+  const handleFavouriteClick = (e) => {
+    e.stopPropagation();
 
-  if (onToggleFavourite) {
-    onToggleFavourite(property.id);
-    return;
-  }
+    if (onToggleFavourite) {
+      onToggleFavourite(property.id);
+      return;
+    }
 
-    // 🧠 Otherwise use localStorage (current behaviour)
     let favourites =
       JSON.parse(localStorage.getItem("favourites")) || [];
 
@@ -47,27 +48,25 @@ const handleFavouriteClick = (e) => {
   };
 
   const handleDragStart = (e) => {
-  e.dataTransfer.setData("propertyId", property.id);
-};
-
+    e.dataTransfer.setData("propertyId", property.id);
+  };
 
   return (
     <div
-  className="property-card"
-  draggable
-  onDragStart={handleDragStart}
-  onClick={() => navigate(`/property/${property.id}`)}
->
+      className="property-card"
+      draggable
+      onDragStart={handleDragStart}
+      onClick={() => navigate(`/property/${property.id}`)}
+    >
+      {/* ❤️ Favourite */}
+      <button
+        className={`favourite-btn ${isFavourite ? "active" : ""}`}
+        onClick={handleFavouriteClick}
+      >
+        ♥
+      </button>
 
-      {/* ❤️ Favourite Icon */}
-<button
-  className={`favourite-btn ${isFavourite ? "active" : ""}`}
-  onClick={handleFavouriteClick}
->
-  ♥
-</button>
-
-
+      {/* 🖼 Image */}
       <div className="property-card-image-wrapper">
         <img
           src={`/${property.picture}`}
@@ -76,13 +75,27 @@ const handleFavouriteClick = (e) => {
         />
       </div>
 
+      {/* 📄 Content */}
       <div className="property-card-content">
-        <h3 className="property-card-title">{property.type}</h3>
-        <p className="property-card-location">{property.location}</p>
+        <h3 className="property-card-title">
+          {property.type}
+        </h3>
+
+        <div className="info-row">
+          <FaMapMarkerAlt />
+          <span>{property.location}</span>
+        </div>
 
         <div className="property-card-meta">
-          <span>{property.bedrooms} Beds</span>
-          <span>{property.tenure}</span>
+          <div className="info-row">
+            <FaBed />
+            <span>{property.bedrooms} Beds</span>
+          </div>
+
+          <div className="info-row">
+            <FaFileAlt />
+            <span>{property.tenure}</span>
+          </div>
         </div>
 
         <p className="property-card-price">

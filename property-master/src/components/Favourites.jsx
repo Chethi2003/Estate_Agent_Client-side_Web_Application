@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./Favourites.css";
 
 function Favourites({
@@ -5,6 +6,8 @@ function Favourites({
   allProperties = [],
   onAddFavourite,
 }) {
+  const navigate = useNavigate();
+
   const favouriteProperties = allProperties.filter((property) =>
     favourites.includes(property.id)
   );
@@ -37,7 +40,13 @@ function Favourites({
         </div>
       ) : (
         favouriteProperties.map((property) => (
-          <div key={property.id} className="favourite-item">
+          <div
+            key={property.id}
+            className="favourite-item"
+            onClick={() =>
+              navigate(`/property/${property.id}`)
+            }
+          >
             <p>{property.type}</p>
             <span>
               £{property.price.toLocaleString()}
