@@ -20,10 +20,6 @@ function Navigation() {
         </li>
 
         <li className="nav-item">
-          <Link to="/favourites">Favourites</Link>
-        </li>
-
-        <li className="nav-item">
           <Link to="/contact">Contact</Link>
         </li>
 
