@@ -25,6 +25,7 @@ function PropertyCard({
   return (
     <div
       className="property-card"
+      data-testid="property-card"
       draggable
       onDragStart={handleDragStart}
       onClick={() => navigate(`/property/${property.id}`)}
