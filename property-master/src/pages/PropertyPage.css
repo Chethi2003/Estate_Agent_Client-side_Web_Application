@@ -49,6 +49,7 @@
 /* ---------------- PROPERTY SUMMARY ---------------- */
 
 .property-details-container {
+  position: relative;
   background: #ffffff;
   border-radius: 16px;
   padding: 24px;
@@ -72,6 +73,38 @@
   font-size: 22px;
   font-weight: 600;
   color: #2563eb;
+}
+
+/* ❤️ Favourite button (top-right of summary card) */
+.property-summary-fav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  border: none;
+  background: #f3f4f6;
+  color: #9ca3af;
+  font-size: 18px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+.property-summary-fav:hover {
+  background: #e5e7eb;
+}
+
+.property-summary-fav.active {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 /* ---------------- TABS ---------------- */
@@ -115,20 +148,5 @@
 
 .tab-content p {
   font-size: 15px;
-  line-height: 1.7;
-  color: #374151;
-}
-
-/* Floor plan */
-.floorplan {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-
-/* Map iframe */
-.tab-content iframe {
-  border-radius: 12px;
+  line-height: 1.6;
 }
