@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import {
   FaMapMarkerAlt,
   FaBed,
@@ -9,42 +8,14 @@ import "./PropertyCard.css";
 
 function PropertyCard({
   property,
-  isFavourite: isFavouriteProp,
+  isFavourite,
   onToggleFavourite,
 }) {
   const navigate = useNavigate();
-  const [isFavourite, setIsFavourite] = useState(false);
-
-  useEffect(() => {
-    if (typeof isFavouriteProp === "boolean") {
-      setIsFavourite(isFavouriteProp);
-    } else {
-      const favourites =
-        JSON.parse(localStorage.getItem("favourites")) || [];
-      setIsFavourite(favourites.includes(property.id));
-    }
-  }, [isFavouriteProp, property.id]);
 
   const handleFavouriteClick = (e) => {
     e.stopPropagation();
-
-    if (onToggleFavourite) {
-      onToggleFavourite(property.id);
-      return;
-    }
-
-    let favourites =
-      JSON.parse(localStorage.getItem("favourites")) || [];
-
-    if (favourites.includes(property.id)) {
-      favourites = favourites.filter((id) => id !== property.id);
-      setIsFavourite(false);
-    } else {
-      favourites.push(property.id);
-      setIsFavourite(true);
-    }
-
-    localStorage.setItem("favourites", JSON.stringify(favourites));
+    onToggleFavourite(property.id);
   };
 
   const handleDragStart = (e) => {
@@ -58,15 +29,15 @@ function PropertyCard({
       onDragStart={handleDragStart}
       onClick={() => navigate(`/property/${property.id}`)}
     >
-      {/* ❤️ Favourite */}
       <button
-        className={`favourite-btn ${isFavourite ? "active" : ""}`}
+        className={`favourite-btn ${
+          isFavourite ? "active" : ""
+        }`}
         onClick={handleFavouriteClick}
       >
         ♥
       </button>
 
-      {/* 🖼 Image */}
       <div className="property-card-image-wrapper">
         <img
           src={`/${property.picture}`}
@@ -75,7 +46,6 @@ function PropertyCard({
         />
       </div>
 
-      {/* 📄 Content */}
       <div className="property-card-content">
         <h3 className="property-card-title">
           {property.type}

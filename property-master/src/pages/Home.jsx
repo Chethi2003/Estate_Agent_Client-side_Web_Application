@@ -10,20 +10,19 @@ import PropertyList from "../components/PropertyList";
 
 import propertiesData from "../data/properties.json";
 
-function Home() {
+function Home({ favourites, onToggleFavourite }) {
   const allProperties = propertiesData.properties;
 
   const [filteredProperties, setFilteredProperties] =
     useState(allProperties);
-
-  const [favourites, setFavourites] = useState([]);
 
   const handleSearch = (filters) => {
     const results = allProperties.filter((property) => {
       if (filters.type !== "Any" && property.type !== filters.type)
         return false;
       if (property.price > Number(filters.price)) return false;
-      if (property.bedrooms > Number(filters.bedrooms)) return false;
+      if (property.bedrooms > Number(filters.bedrooms))
+        return false;
       if (
         filters.postcode &&
         !property.location
@@ -38,37 +37,27 @@ function Home() {
     setFilteredProperties(results);
   };
 
-  const toggleFavourite = (propertyId) => {
-    setFavourites((prev) =>
-      prev.includes(propertyId)
-        ? prev.filter((id) => id !== propertyId)
-        : [...prev, propertyId]
-    );
-  };
-
   return (
     <>
       <Navigation />
       <Welcome />
 
       <div className="main-content">
-        {/* TOP ROW */}
         <div className="top-panel">
           <Search onSearch={handleSearch} />
-          <Favourites
-  favourites={favourites}
-  allProperties={allProperties}
-  onAddFavourite={toggleFavourite}
-/>
 
+          <Favourites
+            favourites={favourites}
+            allProperties={allProperties}
+            onAddFavourite={onToggleFavourite}
+          />
         </div>
 
-        {/* BOTTOM ROW */}
         <div className="results-panel">
           <PropertyList
             properties={filteredProperties}
             favourites={favourites}
-            onToggleFavourite={toggleFavourite}
+            onToggleFavourite={onToggleFavourite}
           />
         </div>
       </div>

@@ -8,8 +8,8 @@ function Favourites({
 }) {
   const navigate = useNavigate();
 
-  const favouriteProperties = allProperties.filter((property) =>
-    favourites.includes(property.id)
+  const favouriteProperties = allProperties.filter(
+    (property) => favourites.includes(property.id)
   );
 
   return (
@@ -18,9 +18,7 @@ function Favourites({
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => {
         const id = e.dataTransfer.getData("propertyId");
-        if (onAddFavourite) {
-          onAddFavourite(id);
-        }
+        onAddFavourite(id);
       }}
     >
       <div className="favourites-header">
