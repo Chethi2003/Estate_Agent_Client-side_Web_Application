@@ -4,7 +4,7 @@ import data from "../data/properties.json";
 import "./PropertyPage.css";
 import Navigation from "../components/Navigation.jsx";
 
-function PropertyPage({ favourites, onToggleFavourite }) {
+function PropertyPage({ favourites = [], onToggleFavourite }) {
   const { id } = useParams();
 
   const property = data.properties.find((p) => p.id === id);
@@ -52,7 +52,6 @@ function PropertyPage({ favourites, onToggleFavourite }) {
 
         {/* PROPERTY SUMMARY */}
         <div className="property-details-container">
-          {/* ❤️ Favourite Button */}
           <button
             className={`favourite-btn property-summary-fav ${
               isFavourite ? "active" : ""
@@ -106,11 +105,13 @@ function PropertyPage({ favourites, onToggleFavourite }) {
           )}
 
           {activeTab === "floor" && (
-            <img
-              src={`/${property.floorPlan}`}
-              alt="Floor plan"
-              className="floorplan"
-            />
+            <div className="floorplan-container">
+              <img
+                src={`/${property.floorPlan}`}
+                alt="Floor plan"
+                className="floorplan"
+              />
+            </div>
           )}
 
           {activeTab === "map" && (

@@ -1,4 +1,5 @@
-/* Page wrapper */
+/* ---------------- PAGE WRAPPER ---------------- */
+
 .property-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,10 +17,11 @@
 .main-image {
   width: 100%;
   height: 480px;
-  object-fit: cover;
+  object-fit:cover;   /* crops */
   border-radius: 16px;
-  margin-bottom: 16px;
 }
+
+
 
 .thumbnails {
   display: flex;
@@ -75,7 +77,8 @@
   color: #2563eb;
 }
 
-/* ❤️ Favourite button (top-right of summary card) */
+/* Favourite button */
+
 .property-summary-fav {
   position: absolute;
   top: 20px;
@@ -153,5 +156,21 @@
 
 .property-description p {
   margin-bottom: 12px;
-  line-height: 1.6;
+}
+
+/* ---------------- FLOOR PLAN FIX ---------------- */
+
+.floorplan-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* ✅ prevents overflow */
+}
+
+.floorplan {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
 }
