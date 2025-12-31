@@ -7,9 +7,7 @@ import Navigation from "../components/Navigation.jsx";
 function PropertyPage({ favourites, onToggleFavourite }) {
   const { id } = useParams();
 
-  const property = data.properties.find(
-    (p) => p.id === id
-  );
+  const property = data.properties.find((p) => p.id === id);
 
   if (!property) {
     return <h2>Property not found</h2>;
@@ -29,7 +27,6 @@ function PropertyPage({ favourites, onToggleFavourite }) {
       <Navigation />
 
       <div className="property-page">
-
         {/* IMAGE GALLERY */}
         <div className="image-gallery">
           <img
@@ -99,7 +96,13 @@ function PropertyPage({ favourites, onToggleFavourite }) {
         {/* TAB CONTENT */}
         <div className="tab-content">
           {activeTab === "description" && (
-            <p>{property.description}</p>
+            <div className="property-description">
+              {property.description
+                .split("<br>")
+                .map((line, index) => (
+                  <p key={index}>{line.trim()}</p>
+                ))}
+            </div>
           )}
 
           {activeTab === "floor" && (
@@ -123,7 +126,6 @@ function PropertyPage({ favourites, onToggleFavourite }) {
             />
           )}
         </div>
-
       </div>
     </>
   );
