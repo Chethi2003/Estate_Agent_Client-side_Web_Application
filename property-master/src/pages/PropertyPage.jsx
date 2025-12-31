@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import data from "../data/properties.json";
 import "./PropertyPage.css";
 import Navigation from "../components/Navigation.jsx";
+import Footer from "../components/Footer.jsx";
 
 function PropertyPage({ favourites = [], onToggleFavourite }) {
   const { id } = useParams();
@@ -128,6 +129,8 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
           )}
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

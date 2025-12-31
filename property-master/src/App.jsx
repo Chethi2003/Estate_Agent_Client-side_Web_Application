@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
 import Properties from "./pages/Properties";
 import PropertyPage from "./pages/PropertyPage";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   const [favourites, setFavourites] = useState([]);
@@ -43,6 +45,12 @@ function App() {
           }
         />
         <Route
+          path="/about"
+          element={
+            <AboutUs />
+          }
+        />
+        <Route
           path="/search"
           element={
             <Properties
@@ -58,6 +66,12 @@ function App() {
               favourites={favourites}
               onToggleFavourite={toggleFavourite}
             />
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <ContactUs />
           }
         />
       </Routes>
