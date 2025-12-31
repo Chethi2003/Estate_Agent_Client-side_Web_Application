@@ -58,14 +58,13 @@
       "location": "Chislehurst Road, Chislehurst BR7",
       "picture": "images/prop3.webp",
       "images": [
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp"
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
       ],
-      "floorPlan": "images/floorplan.webp",
+      "floorPlan": "images/propdetfloor.webp",
       "url": "properties/prop3.html",
       "added": {
         "month": "August",
