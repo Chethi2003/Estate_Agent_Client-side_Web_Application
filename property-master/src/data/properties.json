@@ -6,20 +6,18 @@
       "bedrooms": 3,
       "price": 750000,
       "tenure": "Freehold",
-			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
       "location": "Petts Wood Road, Petts Wood, Orpington BR5",
       "picture": "images/prop1.webp",
-        "images": [
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp"
-  ],
-
-  "floorPlan": "images/floorplan.webp",
-
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
       "url": "properties/prop1.html",
       "added": {
         "month": "October",
@@ -33,18 +31,18 @@
       "bedrooms": 2,
       "price": 399995,
       "tenure": "Freehold",
-			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room...",
       "location": "Crofton Road, Orpington BR6",
       "picture": "images/propflat.webp",
-              "images": [
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp"
-  ],
-  "floorPlan": "images/floorplan.webp",
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
       "url": "properties/prop2.html",
       "added": {
         "month": "September",
@@ -61,17 +59,15 @@
       "description": "Spacious four bedroom detached house located in a quiet residential area. Features include a large driveway, double garage, landscaped garden and open-plan living areas ideal for families.",
       "location": "Chislehurst Road, Chislehurst BR7",
       "picture": "images/prop3.webp",
-              "images": [
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp"
-  ],
-
-  "floorPlan": "images/floorplan.webp",
-
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
       "url": "properties/prop3.html",
       "added": {
         "month": "August",
@@ -88,18 +84,16 @@
       "description": "Modern one bedroom apartment located in the heart of the town centre. Benefits include a private balcony, secure entry system and excellent transport links.",
       "location": "High Street, Bromley BR1",
       "picture": "images/propapart.webp",
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
       "url": "properties/prop4.html",
-              "images": [
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp"
-  ],
-
-  "floorPlan": "images/floorplan.webp",
-
       "added": {
         "month": "July",
         "day": 22,
@@ -115,21 +109,69 @@
       "description": "Well-maintained three bedroom bungalow offering single-level living. Features include a spacious living room, conservatory, mature garden and off-street parking.",
       "location": "Oak Avenue, Sidcup DA14",
       "picture": "images/propbung.webp",
-              "images": [
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp",
-    "images/propflat.webp"
-  ],
-
-  "floorPlan": "images/floorplan.webp",
-
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
       "url": "properties/prop5.html",
       "added": {
         "month": "June",
         "day": 10,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Terraced House",
+      "bedrooms": 3,
+      "price": 485000,
+      "tenure": "Freehold",
+      "description": "A well-presented three bedroom terraced house ideal for first-time buyers and young families. The property offers a bright through lounge, modern fitted kitchen, and a low-maintenance rear garden. Located within close proximity to local schools, shops, and public transport links.",
+      "location": "Maple Road, Bexleyheath DA6",
+      "picture": "images/propterra.webp",
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "May",
+        "day": 18,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "Semi-Detached House",
+      "bedrooms": 4,
+      "price": 825000,
+      "tenure": "Freehold",
+      "description": "An extended four bedroom semi-detached family home offering generous living accommodation throughout. Highlights include a large open-plan kitchen/dining area, two bathrooms, off-street parking, and a south-facing garden. Conveniently situated near excellent schools and commuter routes.",
+      "location": "Willow Close, Beckenham BR3",
+      "picture": "images/propsemidet.webp",
+      "images": [
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp",
+        "images/propflat.webp"
+      ],
+      "floorPlan": "images/floorplan.webp",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "April",
+        "day": 2,
         "year": 2022
       }
     }
