@@ -15,7 +15,7 @@ function Navigation() {
         </li>
 
         <li className="nav-item">
-          <Link to="/">About Us</Link>
+          <Link to="/about">About Us</Link>
         </li>
 
         <li className="nav-item">
