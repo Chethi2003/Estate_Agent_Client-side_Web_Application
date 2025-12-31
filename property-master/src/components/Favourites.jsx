@@ -18,7 +18,7 @@ function Favourites({
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => {
         const id = e.dataTransfer.getData("propertyId");
-        onAddFavourite(id);
+        if (id) onAddFavourite(id);
       }}
     >
       <div className="favourites-header">
@@ -45,10 +45,26 @@ function Favourites({
               navigate(`/property/${property.id}`)
             }
           >
-            <p>{property.type}</p>
-            <span>
-              £{property.price.toLocaleString()}
-            </span>
+            <div className="favourite-info">
+              <p className="favourite-title">
+                {property.type}
+              </p>
+              <span className="favourite-price">
+                £{property.price.toLocaleString()}
+              </span>
+            </div>
+
+            {/* REMOVE BUTTON */}
+            <button
+              className="remove-favourite"
+              onClick={(e) => {
+                e.stopPropagation(); // prevent navigation
+                onAddFavourite(property.id);
+              }}
+              aria-label="Remove favourite"
+            >
+              ✕
+            </button>
           </div>
         ))
       )}
