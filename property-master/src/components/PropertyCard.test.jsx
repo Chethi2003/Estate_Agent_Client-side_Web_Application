@@ -3,9 +3,12 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PropertyCard from "./PropertyCard";
 
+// 🔑 Create a spy for navigation
+const navigateMock = vi.fn();
+
 // ✅ Mock react-router-dom
 vi.mock("react-router-dom", () => ({
-  useNavigate: () => vi.fn(),
+  useNavigate: () => navigateMock,
 }));
 
 describe("PropertyCard", () => {
@@ -53,5 +56,22 @@ describe("PropertyCard", () => {
 
     expect(mockToggle).toHaveBeenCalledOnce();
     expect(mockToggle).toHaveBeenCalledWith("p1");
+  });
+
+  it("navigates to property details page when card is clicked", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <PropertyCard
+        property={mockProperty}
+        isFavourite={false}
+        onToggleFavourite={() => {}}
+      />
+    );
+
+    await user.click(screen.getByTestId("property-card"));
+
+    expect(navigateMock).toHaveBeenCalledOnce();
+    expect(navigateMock).toHaveBeenCalledWith("/property/p1");
   });
 });
