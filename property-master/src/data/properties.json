@@ -82,14 +82,13 @@
       "location": "High Street, Bromley BR1",
       "picture": "images/propapart.webp",
       "images": [
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp"
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
       ],
-      "floorPlan": "images/floorplan.webp",
+      "floorPlan": "images/propapartfloor.webp",
       "url": "properties/prop4.html",
       "added": {
         "month": "July",
