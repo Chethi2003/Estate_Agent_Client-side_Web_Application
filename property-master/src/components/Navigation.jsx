@@ -14,6 +14,10 @@ function Navigation() {
           <Link to="/">Home</Link>
         </li>
 
+        {/* 🔹 Scrolls to search panel */}
+        <li className="nav-item">
+          <Link to="/#search">Search</Link>
+        </li>
 
         <li className="nav-item">
           <Link to="/about">About Us</Link>
@@ -26,7 +30,6 @@ function Navigation() {
         <li className="nav-item">
           <Link to="/contact">Contact Us</Link>
         </li>
-
       </ul>
     </nav>
   );

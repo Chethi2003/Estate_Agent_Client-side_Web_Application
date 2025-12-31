@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Home.css";
 
 import Navigation from "../components/Navigation";
@@ -16,21 +17,29 @@ function Home({ favourites, onToggleFavourite }) {
   const [filteredProperties, setFilteredProperties] =
     useState(allProperties);
 
+  const location = useLocation();
+
+  // 🔹 Scroll to search panel if URL contains #search
+  useEffect(() => {
+    if (location.hash === "#search") {
+      const el = document.getElementById("search");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   const handleSearch = (filters) => {
     const results = allProperties.filter((property) => {
-      // Property type
       if (filters.type !== "Any" && property.type !== filters.type)
         return false;
 
-      // Price
       if (property.price > Number(filters.price))
         return false;
 
-      // Bedrooms
       if (property.bedrooms > Number(filters.bedrooms))
         return false;
 
-      // Postcode
       if (
         filters.postcode &&
         !property.location
@@ -39,14 +48,11 @@ function Home({ favourites, onToggleFavourite }) {
       )
         return false;
 
-      // ✅ DATE FILTER (FIXED FOR YOUR JSON)
       if (filters.dateFrom) {
         const selectedDate = new Date(filters.dateFrom);
-
         const propertyDate = new Date(
           `${property.added.month} ${property.added.day}, ${property.added.year}`
         );
-
         if (propertyDate < selectedDate) return false;
       }
 
@@ -63,7 +69,10 @@ function Home({ favourites, onToggleFavourite }) {
 
       <div className="main-content">
         <div className="top-panel">
-          <Search onSearch={handleSearch} />
+          {/* 🔹 SEARCH ANCHOR */}
+          <div id="search">
+            <Search onSearch={handleSearch} />
+          </div>
 
           <Favourites
             favourites={favourites}

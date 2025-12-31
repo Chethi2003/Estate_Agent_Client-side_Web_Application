@@ -2,6 +2,7 @@ import React from "react";
 import "./AboutUs.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import { FaHome, FaHandshake, FaMapMarkerAlt } from "react-icons/fa";
 
 function AboutUs() {
   return (
@@ -9,81 +10,57 @@ function AboutUs() {
       <Navigation />
 
       <div className="about-page">
-        {/* HERO SECTION */}
+        {/* HERO */}
         <section className="about-hero">
           <h1>About Us</h1>
           <p>
-            Your trusted partner in finding the perfect home and making smart
-            property investments.
+            Your trusted partner in property buying, selling, and investing.
           </p>
         </section>
 
-        {/* ABOUT CONTENT */}
+        {/* CONTENT */}
         <section className="about-content">
           <div className="about-text">
             <h2>Who We Are</h2>
             <p>
-              PropertyMaster is a modern real estate platform dedicated to
-              helping buyers, sellers, and renters make confident property
-              decisions. With a strong focus on transparency, quality listings,
-              and user experience, we aim to simplify the property journey.
+              PropertyMaster is a modern real estate platform designed to make
+              property discovery simple, transparent, and reliable.
             </p>
-
             <p>
-              Whether you're searching for your first home, upgrading your
-              lifestyle, or investing in property, our expert-driven approach
-              ensures you always get the best value.
+              From first-time buyers to experienced investors, we help people
+              make confident property decisions through expert insight and
+              quality listings.
             </p>
           </div>
 
           <div className="about-highlights">
             <div className="highlight-card">
-              <h3>🏡 500+</h3>
+              <FaHome className="about-icon" />
+              <h3>500+</h3>
               <p>Verified Properties</p>
             </div>
 
             <div className="highlight-card">
-              <h3>🤝 Trusted</h3>
+              <FaHandshake className="about-icon" />
+              <h3>Trusted</h3>
               <p>By Thousands of Clients</p>
             </div>
 
             <div className="highlight-card">
-              <h3>📍 UK Based</h3>
+              <FaMapMarkerAlt className="about-icon" />
+              <h3>UK Based</h3>
               <p>Local Market Experts</p>
             </div>
           </div>
         </section>
 
-        {/* MISSION & VALUES */}
+        {/* MISSION */}
         <section className="about-mission">
           <h2>Our Mission</h2>
           <p>
-            To connect people with properties they love by providing reliable
-            information, expert insights, and a seamless digital experience.
+            To connect people with homes they love by providing accurate
+            information, honest pricing, and a seamless digital experience.
           </p>
-
-          <div className="values">
-            <div className="value-card">
-              <h4>Transparency</h4>
-              <p>
-                Clear property details, honest pricing, and no hidden surprises.
-              </p>
-            </div>
-
-            <div className="value-card">
-              <h4>Quality</h4>
-              <p>
-                Carefully curated listings that meet our high standards.
-              </p>
-            </div>
-
-            <div className="value-card">
-              <h4>Customer First</h4>
-              <p>
-                Your goals guide everything we do.
-              </p>
-            </div>
-          </div>
         </section>
       </div>
 

@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactUs.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 function ContactUs() {
   return (
@@ -13,23 +14,19 @@ function ContactUs() {
         <section className="contact-hero">
           <h1>Contact Us</h1>
           <p>
-            Have a question about a property or need expert advice?  
-            We’re here to help you every step of the way.
+            Have questions? Our team is here to help you find your perfect
+            property.
           </p>
         </section>
 
         {/* CONTENT */}
         <section className="contact-content">
-          {/* CONTACT INFO */}
+          {/* INFO */}
           <div className="contact-info">
             <h2>Get in Touch</h2>
-            <p>
-              Reach out to us using the details below or send us a message using
-              the form.
-            </p>
 
             <div className="info-item">
-              <span>📍</span>
+              <FaMapMarkerAlt className="contact-icon" />
               <div>
                 <h4>Address</h4>
                 <p>Petts Wood Road, Orpington BR5, UK</p>
@@ -37,7 +34,7 @@ function ContactUs() {
             </div>
 
             <div className="info-item">
-              <span>📞</span>
+              <FaPhoneAlt className="contact-icon" />
               <div>
                 <h4>Phone</h4>
                 <p>+44 20 1234 5678</p>
@@ -45,7 +42,7 @@ function ContactUs() {
             </div>
 
             <div className="info-item">
-              <span>✉️</span>
+              <FaEnvelope className="contact-icon" />
               <div>
                 <h4>Email</h4>
                 <p>contact@propertymaster.co.uk</p>
@@ -53,26 +50,14 @@ function ContactUs() {
             </div>
           </div>
 
-          {/* CONTACT FORM */}
+          {/* FORM */}
           <div className="contact-form">
             <h2>Send a Message</h2>
 
             <form>
-              <div className="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe" />
-              </div>
-
-              <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" />
-              </div>
-
-              <div className="form-group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="Write your message here..." />
-              </div>
-
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="Email Address" />
+              <textarea rows="5" placeholder="Your Message"></textarea>
               <button type="submit">Send Message</button>
             </form>
           </div>
