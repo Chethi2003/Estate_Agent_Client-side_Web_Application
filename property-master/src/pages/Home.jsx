@@ -18,11 +18,19 @@ function Home({ favourites, onToggleFavourite }) {
 
   const handleSearch = (filters) => {
     const results = allProperties.filter((property) => {
+      // Property type
       if (filters.type !== "Any" && property.type !== filters.type)
         return false;
-      if (property.price > Number(filters.price)) return false;
+
+      // Price
+      if (property.price > Number(filters.price))
+        return false;
+
+      // Bedrooms
       if (property.bedrooms > Number(filters.bedrooms))
         return false;
+
+      // Postcode
       if (
         filters.postcode &&
         !property.location
@@ -30,6 +38,17 @@ function Home({ favourites, onToggleFavourite }) {
           .includes(filters.postcode.toLowerCase())
       )
         return false;
+
+      // ✅ DATE FILTER (FIXED FOR YOUR JSON)
+      if (filters.dateFrom) {
+        const selectedDate = new Date(filters.dateFrom);
+
+        const propertyDate = new Date(
+          `${property.added.month} ${property.added.day}, ${property.added.year}`
+        );
+
+        if (propertyDate < selectedDate) return false;
+      }
 
       return true;
     });
