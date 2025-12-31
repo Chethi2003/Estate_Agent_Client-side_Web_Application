@@ -15,17 +15,18 @@ function Navigation() {
         </li>
 
         <li className="nav-item">
+          <Link to="/">About Us</Link>
+        </li>
+
+        <li className="nav-item">
           <Link to="/search">Properties</Link>
           
         </li>
 
         <li className="nav-item">
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Contact Us</Link>
         </li>
 
-        <li className="nav-item">
-          <Link to="/signin">Sign in</Link>
-        </li>
       </ul>
     </nav>
   );
