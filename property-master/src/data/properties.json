@@ -10,12 +10,11 @@
       "location": "Petts Wood Road, Petts Wood, Orpington BR5",
       "picture": "images/propmodhouse.webp",
       "images": [
-        "images/propmodhouse.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp"
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
       ],
       "floorPlan": "images/propmodfloor.webp",
       "url": "properties/prop1.html",
@@ -35,14 +34,13 @@
       "location": "Crofton Road, Orpington BR6",
       "picture": "images/propflat.webp",
       "images": [
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp",
-        "images/propflat.webp"
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
       ],
-      "floorPlan": "images/floorplan.webp",
+      "floorPlan": "images/propflatfloor.webp",
       "url": "properties/prop2.html",
       "added": {
         "month": "September",
