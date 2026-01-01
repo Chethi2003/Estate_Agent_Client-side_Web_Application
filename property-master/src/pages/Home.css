@@ -1,4 +1,4 @@
-/* ---------------- GLOBAL RESET ---------------- */
+/*resetting*/
 
 html,
 body {
@@ -15,7 +15,7 @@ body {
   box-sizing: inherit;
 }
 
-/* ---------------- MAIN LAYOUT ---------------- */
+/*main layout */
 
 .main-content {
   display: flex;
@@ -26,7 +26,7 @@ body {
   padding: 20px clamp(16px, 6vw, 200px);
 }
 
-/* ---------------- TOP PANEL ---------------- */
+/*top panel*/
 /* Search + Favourites */
 
 .top-panel {
@@ -45,7 +45,7 @@ body {
   max-width: 100%;
 }
 
-/* ---------------- RESULTS PANEL ---------------- */
+/*result panel */
 
 .results-panel {
   width: 100%;
@@ -58,7 +58,7 @@ body {
   gap: 24px;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+/*responsiveness*/
 
 /* Tablets & below */
 @media (max-width: 1000px) {
