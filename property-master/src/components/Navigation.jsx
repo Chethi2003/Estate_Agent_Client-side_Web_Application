@@ -6,7 +6,7 @@ function Navigation() {
   return (
     <nav className="navigation-bar">
       <div className="nav-logo">
-        <Link to="/">PropertyMaster</Link>
+        <Link to="/">Grand Abode</Link>
       </div>
 
       <ul className="nav-links">
