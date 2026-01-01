@@ -1,38 +1,66 @@
-html, body {
+/* ---------------- GLOBAL RESET ---------------- */
+
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;   /* 🔑 stack rows */
-  gap: 40px;
-  padding: 20px 200px;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 🔝 Search + Favourites */
-.top-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3%;
-  align-items: flex-start;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-/* 🔽 Property cards */
+/* ---------------- MAIN LAYOUT ---------------- */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  /* Responsive padding: mobile → desktop */
+  padding: 20px clamp(16px, 6vw, 200px);
+}
+
+/* ---------------- TOP PANEL ---------------- */
+/* Search + Favourites */
+
+.top-panel {
+  display: grid;
+
+  /* Prevent overflow */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Anchor wrapper for search */
+#search {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ---------------- RESULTS PANEL ---------------- */
+
 .results-panel {
   width: 100%;
 }
 
-/* Cards grid */
+/* Property cards grid */
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
-/* 📱 Mobile */
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablets & below */
 @media (max-width: 1000px) {
   .main-content {
     padding: 20px;
@@ -40,5 +68,17 @@ html, body {
 
   .top-panel {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 16px;
+  }
+
+  .results-grid {
+    gap: 16px;
   }
 }

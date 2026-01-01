@@ -1,14 +1,20 @@
-/* ===== Container ===== */
+/* container*/
+
 .search-container {
-  width: 700px;
+  width: 100%;               /* responsive */
+  max-width: 700px;          /* desktop size */
   margin: 0 auto;
+
   padding: 10px 40px 40px 40px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
 }
 
-/* ===== Title ===== */
+/* title*/
+
 .search-title {
   display: flex;
   align-items: center;
@@ -23,7 +29,8 @@
   font-size: 20px;
 }
 
-/* ===== Form Group ===== */
+/* form group */
+
 .form-group {
   margin-bottom: 25px;
 }
@@ -36,8 +43,10 @@
   color: #000;
 }
 
-/* ===== React Select ===== */
+/*selector*/
+
 .react-select__control {
+  width: 100%;
   min-height: 48px;
   border-radius: 10px !important;
   border: none !important;
@@ -79,7 +88,8 @@
   color: #fff;
 }
 
-/* ===== rc-slider ===== */
+/* slider */
+
 .rc-slider {
   margin-top: 12px;
 }
@@ -109,13 +119,16 @@
   box-shadow: none;
 }
 
-/* ===== Date Picker ===== */
+/*data picker*/
+
 .react-datepicker-wrapper {
   width: 100%;
 }
 
 .react-datepicker__input-container input {
   width: 100%;
+  max-width: 100%;
+
   padding: 14px 12px;
   border-radius: 10px;
   border: none;
@@ -124,6 +137,8 @@
   outline: none;
   color: #000;
   cursor: pointer;
+
+  box-sizing: border-box;
 }
 
 .react-datepicker {
@@ -147,7 +162,8 @@
   color: #fff;
 }
 
-/* button*/
+/*button*/
+
 .search-button {
   width: 100%;
   padding: 16px;
@@ -158,13 +174,24 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  box-sizing: border-box;
 }
 
 .search-button:hover {
   transition: 0.25s;
   transform: scale(1.02);
+}
+
+/*for mobile*/
+
+@media (max-width: 480px) {
+  .search-container {
+    padding: 16px;
+  }
 }
