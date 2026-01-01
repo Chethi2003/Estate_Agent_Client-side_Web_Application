@@ -37,7 +37,7 @@ function Search({ onSearch }) {
     { value: "Apartment", label: "Apartment" },
     { value: "Bungalow", label: "Bungalow" },
     { value: "Terraced House", label: "Terraced House" },
-    { value: "Semi Detached House", label: "Semi Detached House" }
+    { value: "Semi-Detached House", label: "Semi Detached House" }
   ];
 
   const postcodeOptions = [
