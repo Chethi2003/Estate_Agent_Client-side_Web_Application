@@ -3,6 +3,7 @@ import data from "../data/properties.json";
 import "./Properties.css";
 import PropertyCard from "../components/PropertyCard";
 import Navigation from "../components/Navigation.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Properties({
   favourites,
@@ -30,6 +31,7 @@ function Properties({
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
