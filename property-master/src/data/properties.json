@@ -107,10 +107,10 @@
       "picture": "images/propbung.webp",
       "images": [
         "images/propbung.webp",
-        "images/propbung1.webp",
-        "images/propbung2.webp",
-        "images/propbung3.webp",
-        "images/propbung4.webp"
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
       ],
       "floorPlan": "images/propbungfloor.webp",
       "url": "properties/prop5.html",
@@ -131,10 +131,10 @@
       "picture": "images/propterra.webp",
       "images": [
         "images/propterra.webp",
-        "images/propterra1.webp",
-        "images/propterra2.webp",
-        "images/propterra3.webp",
-        "images/propterra4.webp"
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
       ],
       "floorPlan": "images/propterrafloor.webp",
       "url": "properties/prop6.html",
@@ -155,10 +155,10 @@
       "picture": "images/propsemidet.webp",
       "images": [
         "images/propsemidet.webp",
-        "images/propsemidet1.webp",
-        "images/propsemidet2.webp",
-        "images/propsemidet3.webp",
-        "images/propsemidet4.webp"
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
       ],
       "floorPlan": "images/propsemidetfloor.webp",
       "url": "properties/prop7.html",
