@@ -110,7 +110,7 @@ function Search({ onSearch }) {
         />
       </div>
 
-      {/* Button (buttons are allowed to be native) */}
+      {/* Button (allowed to navigate))*/}
       <button className="search-button" onClick={handleSearch}>
         Search Properties
       </button>

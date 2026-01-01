@@ -3,10 +3,10 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PropertyCard from "./PropertyCard";
 
-// 🔑 Create a spy for navigation
+// Create a spy for navigation
 const navigateMock = vi.fn();
 
-// ✅ Mock react-router-dom
+// Mock react-router-dom
 vi.mock("react-router-dom", () => ({
   useNavigate: () => navigateMock,
 }));

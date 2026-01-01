@@ -16,7 +16,7 @@
   display: block;
 }
 
-/* Optional: hover effect stays same */
+/* hover effect stays same */
 .nav-links a:hover {
   color: #ffffff;
 }
@@ -50,30 +50,30 @@
 /*Responsive styles */
 @media (max-width: 768px) {
   .navigation-bar {
-    flex-direction: column;       /* Stack logo and links vertically */
-    align-items: flex-start;      /* Align items to the left */
-    padding: 20px;                /* Reduce padding */
+    flex-direction: column;  /* Stack logo and links vertically */
+    align-items: flex-start;   /* Align items to the left */
+    padding: 20px;          /* Reduce padding */
   }
 
   .nav-links {
-    flex-direction: column;       /* Stack nav items vertically */
-    gap: 10px;                    /* Smaller gap */
-    width: 100%;                  /* Full width for links */
+    flex-direction: column;   /* Stack nav items vertically */
+    gap: 10px;   /* Smaller gap */
+    width: 100%;  /* Full width for links */
   }
 
   .nav-item {
-    width: 100%;                  /* Make each item stretch */
-    text-align: left;             /* Align text to the left */
+    width: 100%;   /* Make each item stretch */
+    text-align: left; /* Align text to the left */
   }
 
   .nav-logo {
-    margin-bottom: 10px;          /* Space between logo and links */
+    margin-bottom: 10px; /* Space between logo and links */
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo {
-    font-size: 1rem;              /* Slightly smaller logo text */
+    font-size: 1rem; /* Slightly smaller logo text */
   }
 
   .nav-links {

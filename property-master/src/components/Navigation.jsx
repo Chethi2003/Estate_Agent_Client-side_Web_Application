@@ -14,7 +14,7 @@ function Navigation() {
           <Link to="/">Home</Link>
         </li>
 
-        {/* 🔹 Scrolls to search panel */}
+        {/*Scrolls to search panel */}
         <li className="nav-item">
           <Link to="/#search">Search</Link>
         </li>

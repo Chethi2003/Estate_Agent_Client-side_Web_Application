@@ -54,7 +54,7 @@ function Favourites({
               </span>
             </div>
 
-            {/* REMOVE BUTTON */}
+            {/* Remove Button */}
             <button
               className="remove-favourite"
               onClick={(e) => {

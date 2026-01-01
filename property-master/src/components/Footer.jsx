@@ -14,7 +14,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* BRAND */}
+        {/* Brand */}
         <div className="footer-section">
           <h3>PropertyMaster</h3>
           <p>
@@ -23,7 +23,7 @@ function Footer() {
           </p>
         </div>
 
-        {/* QUICK LINKS */}
+        {/* Quick Links */}
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
@@ -34,7 +34,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* CONTACT INFO */}
+        {/* Contact info */}
         <div className="footer-section">
           <h4>Contact</h4>
           <p><FaMapMarkerAlt /> Petts Wood Road, Orpington BR5</p>
@@ -42,7 +42,7 @@ function Footer() {
           <p><FaEnvelope /> contact@propertymaster.co.uk</p>
         </div>
 
-        {/* SOCIAL */}
+        {/* Social */}
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-icons">
@@ -54,7 +54,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* COPYRIGHT */}
+      {/* Copyright */}
       <div className="footer-bottom">
         <p>© 2024 Property Master. All rights reserved.</p>
       </div>

@@ -7,7 +7,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* ---------------- HEADER ---------------- */
+/* Header*/
 
 .favourites-header {
   display: flex;
@@ -27,7 +27,7 @@
   font-weight: 600;
 }
 
-/* ---------------- EMPTY STATE ---------------- */
+/* Empty State */
 
 .favourites-empty {
   text-align: center;
@@ -52,7 +52,7 @@
   color: #9ca3af;
 }
 
-/* ---------------- FAVOURITE ITEM ---------------- */
+/* Favourite Item */
 
 .favourite-item {
   display: flex;
@@ -86,7 +86,7 @@
   color: #6b7280;
 }
 
-/* ---------------- REMOVE BUTTON ---------------- */
+/* Remove Button */
 
 .remove-favourite {
   background: none;

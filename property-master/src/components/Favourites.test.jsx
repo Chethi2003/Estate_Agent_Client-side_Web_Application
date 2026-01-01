@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Favourites from "./Favourites";
 
-// ✅ Mock react-router-dom
+// Mock react-router-dom
 vi.mock("react-router-dom", () => ({
   useNavigate: () => vi.fn(),
 }));
