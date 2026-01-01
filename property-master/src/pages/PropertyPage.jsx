@@ -28,7 +28,7 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
       <Navigation />
 
       <div className="property-page">
-        {/* IMAGE GALLERY */}
+        {/* image gallery */}
         <div className="image-gallery">
           <img
             src={`/${activeImage}`}
@@ -51,7 +51,7 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
           </div>
         </div>
 
-        {/* PROPERTY SUMMARY */}
+        {/* property summery */}
         <div className="property-details-container">
           <button
             className={`favourite-btn property-summary-fav ${
@@ -69,7 +69,7 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
           </p>
         </div>
 
-        {/* TABS */}
+        {/* tabs */}
         <div className="tabs">
           <button
             className={activeTab === "description" ? "active" : ""}
@@ -93,7 +93,7 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
           </button>
         </div>
 
-        {/* TAB CONTENT */}
+        {/* tab content */}
         <div className="tab-content">
           {activeTab === "description" && (
             <div className="property-description">

@@ -19,7 +19,7 @@ function Home({ favourites, onToggleFavourite }) {
 
   const location = useLocation();
 
-  // 🔹 Scroll to search panel if URL contains #search
+  // Scroll to search panel if URL contains #search
   useEffect(() => {
     if (location.hash === "#search") {
       const el = document.getElementById("search");
@@ -69,7 +69,7 @@ function Home({ favourites, onToggleFavourite }) {
 
       <div className="main-content">
         <div className="top-panel">
-          {/* 🔹 SEARCH ANCHOR */}
+          {/* search ancor */}
           <div id="search">
             <Search onSearch={handleSearch} />
           </div>

@@ -18,7 +18,7 @@ function AboutUs() {
           </p>
         </section>
 
-        {/* CONTENT */}
+        {/* content */}
         <section className="about-content">
           <div className="about-text">
             <h2>Who We Are</h2>
@@ -54,7 +54,7 @@ function AboutUs() {
           </div>
         </section>
 
-        {/* MISSION */}
+        {/* mission */}
         <section className="about-mission">
           <h2>Our Mission</h2>
           <p>

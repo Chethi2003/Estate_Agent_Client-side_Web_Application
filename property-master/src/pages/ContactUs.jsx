@@ -10,7 +10,7 @@ function ContactUs() {
       <Navigation />
 
       <div className="contact-page">
-        {/* HERO */}
+        {/* hero */}
         <section className="contact-hero">
           <h1>Contact Us</h1>
           <p>
@@ -19,9 +19,9 @@ function ContactUs() {
           </p>
         </section>
 
-        {/* CONTENT */}
+        {/* content */}
         <section className="contact-content">
-          {/* INFO */}
+          {/* info */}
           <div className="contact-info">
             <h2>Get in Touch</h2>
 
@@ -50,7 +50,7 @@ function ContactUs() {
             </div>
           </div>
 
-          {/* FORM */}
+          {/* form */}
           <div className="contact-form">
             <h2>Send a Message</h2>
 

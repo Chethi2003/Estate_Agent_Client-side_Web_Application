@@ -3,7 +3,7 @@
   color: #111827;
 }
 
-/* HERO */
+/* hero */
 .about-hero {
   background: linear-gradient(135deg, #1e40af, #2563eb);
   color: #ffffff;
@@ -21,7 +21,7 @@
   opacity: 0.95;
 }
 
-/* CONTENT */
+/* content */
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -37,7 +37,7 @@
   color: #374151;
 }
 
-/* HIGHLIGHTS */
+/* highlights */
 .about-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,7 +61,7 @@
   margin-bottom: 6px;
 }
 
-/* MISSION */
+/* mission */
 .about-mission {
   background: #f3f4f6;
   padding: 60px 20px;
@@ -74,7 +74,7 @@
   color: #4b5563;
 }
 
-/* RESPONSIVE */
+/* responsivee */
 @media (max-width: 900px) {
   .about-content {
     grid-template-columns: 1fr;

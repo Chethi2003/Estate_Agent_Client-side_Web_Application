@@ -1,4 +1,4 @@
-/* ---------------- PAGE WRAPPER ---------------- */
+/* page wrapper */
 
 .property-page {
   max-width: 1200px;
@@ -8,7 +8,7 @@
   color: #111827;
 }
 
-/* ---------------- IMAGE GALLERY ---------------- */
+/* image gallery */
 
 .image-gallery {
   margin-bottom: 32px;
@@ -48,7 +48,7 @@
   border-color: #2563eb;
 }
 
-/* ---------------- PROPERTY SUMMARY ---------------- */
+/* property details */
 
 .property-details-container {
   position: relative;
@@ -110,7 +110,7 @@
   color: #dc2626;
 }
 
-/* ---------------- TABS ---------------- */
+/* tabs */
 
 .tabs {
   display: flex;
@@ -140,7 +140,7 @@
   color: #111827;
 }
 
-/* ---------------- TAB CONTENT ---------------- */
+/* tab content */
 
 .tab-content {
   background: #ffffff;
@@ -158,12 +158,12 @@
   margin-bottom: 12px;
 }
 
-/* ---------------- FLOOR PLAN FIX ---------------- */
+/* floor plan fix */
 
 .floorplan-container {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; /* ✅ prevents overflow */
+  overflow-x: auto; /*  prevents overflow */
 }
 
 .floorplan {
