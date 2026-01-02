@@ -23,7 +23,7 @@ body {
   gap: 40px;
 
   /* Responsive padding: mobile → desktop */
-  padding: 20px clamp(16px, 6vw, 200px);
+  padding: 20px clamp(16px, 10vw, 200px);
 }
 
 /*top panel*/
@@ -35,7 +35,7 @@ body {
   /* Prevent overflow */
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-  gap: 32px;
+  gap: 5px;
   align-items: stretch;
 }
 
