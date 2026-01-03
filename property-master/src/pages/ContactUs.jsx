@@ -37,7 +37,7 @@ function ContactUs() {
               <FaPhoneAlt className="contact-icon" />
               <div>
                 <h4>Phone</h4>
-                <p>+44 20 1234 5678</p>
+                <p>+44 20 6525 5632</p>
               </div>
             </div>
 
@@ -45,7 +45,7 @@ function ContactUs() {
               <FaEnvelope className="contact-icon" />
               <div>
                 <h4>Email</h4>
-                <p>contact@propertymaster.co.uk</p>
+                <p>contact@grandabode.co.uk</p>
               </div>
             </div>
           </div>

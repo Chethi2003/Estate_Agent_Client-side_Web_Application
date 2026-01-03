@@ -38,7 +38,7 @@ function Footer() {
         <div className="footer-section">
           <h4>Contact</h4>
           <p><FaMapMarkerAlt /> Petts Wood Road, Orpington BR5</p>
-          <p><FaPhoneAlt /> +44 20 1234 5678</p>
+          <p><FaPhoneAlt /> +44 20 6525 5632</p>
           <p><FaEnvelope /> contact@grandabode.co.uk</p>
         </div>
 

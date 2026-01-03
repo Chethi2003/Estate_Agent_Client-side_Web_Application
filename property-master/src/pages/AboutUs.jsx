@@ -23,7 +23,7 @@ function AboutUs() {
           <div className="about-text">
             <h2>Who We Are</h2>
             <p>
-              PropertyMaster is a modern real estate platform designed to make
+              Grand Abode is a modern real estate platform designed to make
               property discovery simple, transparent, and reliable.
             </p>
             <p>
