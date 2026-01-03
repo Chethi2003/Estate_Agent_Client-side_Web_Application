@@ -16,7 +16,7 @@ function Footer() {
       <div className="footer-container">
         {/* Brand */}
         <div className="footer-section">
-          <h3>PropertyMaster</h3>
+          <h3>Grand Abode</h3>
           <p>
             Helping you find the perfect home with confidence, transparency,
             and trust.
@@ -39,7 +39,7 @@ function Footer() {
           <h4>Contact</h4>
           <p><FaMapMarkerAlt /> Petts Wood Road, Orpington BR5</p>
           <p><FaPhoneAlt /> +44 20 1234 5678</p>
-          <p><FaEnvelope /> contact@propertymaster.co.uk</p>
+          <p><FaEnvelope /> contact@grandabode.co.uk</p>
         </div>
 
         {/* Social */}
@@ -56,7 +56,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="footer-bottom">
-        <p>© 2024 Property Master. All rights reserved.</p>
+        <p>© 2025 Grand Abode. All rights reserved.</p>
       </div>
     </footer>
   );
