@@ -27,7 +27,7 @@ describe("PropertyCard", () => {
       <PropertyCard
         property={mockProperty}
         isFavourite={false}
-        onToggleFavourite={() => {}}
+        onToggleFavourite={() => { }}
       />
     );
 
@@ -65,7 +65,7 @@ describe("PropertyCard", () => {
       <PropertyCard
         property={mockProperty}
         isFavourite={false}
-        onToggleFavourite={() => {}}
+        onToggleFavourite={() => { }}
       />
     );
 

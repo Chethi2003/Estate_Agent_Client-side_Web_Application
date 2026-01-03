@@ -14,14 +14,15 @@
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
 
-  padding: 15% 0;   /* ⬅ FIX: no horizontal padding */
+  padding: 15% 0;
+  /* ⬅ FIX: no horizontal padding */
 }
 
 .welcome-title {
   font-size: 400%;
   font-weight: bolder;
   color: white;
-  
+
 }
 
 .welcome-subtitle {

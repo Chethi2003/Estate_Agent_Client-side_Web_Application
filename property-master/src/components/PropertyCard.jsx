@@ -31,9 +31,8 @@ function PropertyCard({
       onClick={() => navigate(`/property/${property.id}`)}
     >
       <button
-        className={`favourite-btn ${
-          isFavourite ? "active" : ""
-        }`}
+        className={`favourite-btn ${isFavourite ? "active" : ""
+          }`}
         onClick={handleFavouriteClick}
       >
         ♥

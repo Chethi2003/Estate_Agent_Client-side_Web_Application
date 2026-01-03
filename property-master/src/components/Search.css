@@ -1,8 +1,10 @@
 /* container*/
 
 .search-container {
-  width: 100%;               /* responsive */
-  max-width: 700px;          /* desktop size */
+  width: 100%;
+  /* responsive */
+  max-width: 700px;
+  /* desktop size */
   margin: 0 auto;
 
   padding: 10px 40px 40px 40px;

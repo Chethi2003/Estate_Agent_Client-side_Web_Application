@@ -42,9 +42,8 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
                 key={index}
                 src={`/${img}`}
                 alt={`Thumbnail ${index + 1}`}
-                className={`thumbnail ${
-                  activeImage === img ? "active" : ""
-                }`}
+                className={`thumbnail ${activeImage === img ? "active" : ""
+                  }`}
                 onClick={() => setActiveImage(img)}
               />
             ))}
@@ -54,9 +53,8 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
         {/* property summery */}
         <div className="property-details-container">
           <button
-            className={`favourite-btn property-summary-fav ${
-              isFavourite ? "active" : ""
-            }`}
+            className={`favourite-btn property-summary-fav ${isFavourite ? "active" : ""
+              }`}
             onClick={() => onToggleFavourite(property.id)}
           >
             ♥

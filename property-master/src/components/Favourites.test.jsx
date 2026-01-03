@@ -28,7 +28,7 @@ describe("Favourites component", () => {
       <Favourites
         favourites={favourites}
         allProperties={allProperties}
-        onAddFavourite={() => {}}
+        onAddFavourite={() => { }}
       />
     );
 
@@ -51,7 +51,7 @@ describe("Favourites component", () => {
       <Favourites
         favourites={[]}
         allProperties={[]}
-        onAddFavourite={() => {}}
+        onAddFavourite={() => { }}
       />
     );
 
