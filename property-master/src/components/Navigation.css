@@ -1,92 +1,90 @@
 .navigation-bar {
-  background-color: #002735;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 200px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  padding: 1.25rem clamp(1.25rem, 5vw, 5rem);
+  background: var(--bg-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-smooth);
 }
-
-/* Remove default link styles */
-.nav-links a,
-.nav-logo a {
-  color: #ffffff;
-  text-decoration: none;
-  display: block;
-}
-
-/* hover effect stays same */
-.nav-links a:hover {
-  color: #ffffff;
-}
-
 
 .nav-logo {
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.nav-logo::before {
+  content: '◈';
+  color: var(--primary);
+  font-size: 1.2rem;
+  -webkit-text-fill-color: var(--primary);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
 }
 
 .nav-item {
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+  transition: var(--transition-smooth);
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transition: 0.25s;
+  color: var(--text-primary);
 }
 
-/*Responsive styles */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .navigation-bar {
-    flex-direction: column;
-    /* Stack logo and links vertically */
-    align-items: flex-start;
-    /* Align items to the left */
-    padding: 20px;
-    /* Reduce padding */
+    padding: 1rem 1.25rem;
   }
-
+  
   .nav-links {
-    flex-direction: column;
-    /* Stack nav items vertically */
-    gap: 10px;
-    /* Smaller gap */
-    width: 100%;
-    /* Full width for links */
+    gap: 1.25rem;
   }
-
+  
   .nav-item {
-    width: 100%;
-    /* Make each item stretch */
-    text-align: left;
-    /* Align text to the left */
+    font-size: 0.85rem;
   }
-
+  
   .nav-logo {
-    margin-bottom: 10px;
-    /* Space between logo and links */
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-logo {
-    font-size: 1rem;
-    /* Slightly smaller logo text */
-  }
-
-  .nav-links {
-    gap: 8px;
+    font-size: 1.25rem;
   }
 }

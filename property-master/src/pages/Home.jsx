@@ -68,25 +68,31 @@ function Home({ favourites, onToggleFavourite }) {
       <Welcome />
 
       <div className="main-content">
-        <div className="top-panel">
-          {/* search ancor */}
-          <div id="search">
-            <Search onSearch={handleSearch} />
+        {/* Horizontal Search Toolbar */}
+        <section className="search-section">
+          <Search onSearch={handleSearch} />
+        </section>
+
+        <div className="layout-grid">
+          {/* Main Results Area */}
+          <div className="results-area">
+            <div className="results-panel">
+              <PropertyList
+                properties={filteredProperties}
+                favourites={favourites}
+                onToggleFavourite={onToggleFavourite}
+              />
+            </div>
           </div>
 
-          <Favourites
-            favourites={favourites}
-            allProperties={allProperties}
-            onAddFavourite={onToggleFavourite}
-          />
-        </div>
-
-        <div className="results-panel">
-          <PropertyList
-            properties={filteredProperties}
-            favourites={favourites}
-            onToggleFavourite={onToggleFavourite}
-          />
+          {/* Sidebar Area */}
+          <aside className="sidebar-area">
+            <Favourites
+              favourites={favourites}
+              allProperties={allProperties}
+              onAddFavourite={onToggleFavourite}
+            />
+          </aside>
         </div>
       </div>
 

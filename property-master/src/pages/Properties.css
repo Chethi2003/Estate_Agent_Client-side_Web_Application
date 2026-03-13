@@ -1,31 +1,36 @@
 .properties-page {
-  padding: 60px 200px;
-  background: #f5f7f9;
+  padding: 100px clamp(20px, 8vw, 150px) 150px;
   min-height: 100vh;
 }
 
 .properties-title {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #002735;
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #fff;
+  margin-bottom: 3rem;
+  letter-spacing: -2px;
+  line-height: 1;
 }
 
-/* key */
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .properties-page {
-    padding: 40px 80px;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
 }
 
 @media (max-width: 768px) {
   .properties-page {
-    padding: 30px 20px;
+    padding: 40px 1.25rem 80px;
+  }
+  
+  .properties-title {
+    margin-bottom: 2rem;
+  }
+
+  .properties-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
   }
 }

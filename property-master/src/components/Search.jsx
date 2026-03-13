@@ -37,7 +37,11 @@ function Search({ onSearch }) {
     { value: "Apartment", label: "Apartment" },
     { value: "Bungalow", label: "Bungalow" },
     { value: "Terraced House", label: "Terraced House" },
-    { value: "Semi-Detached House", label: "Semi Detached House" }
+    { value: "Semi-Detached House", label: "Semi Detached House" },
+    { value: "Villa", label: "Villa" },
+    { value: "Penthouse", label: "Penthouse" },
+    { value: "Studio", label: "Studio" },
+    { value: "Cottage", label: "Cottage" }
   ];
 
   const postcodeOptions = [
@@ -49,71 +53,61 @@ function Search({ onSearch }) {
   ];
 
   return (
-    <div className="search-container">
-      <h2 className="search-title">
-        <span className="search-icon">🔍︎</span> Search Properties
-      </h2>
+    <div className="search-toolbar">
+      <div className="search-toolbar-grid">
+        {/* Type */}
+        <div className="toolbar-group">
+          <label>Type</label>
+          <Select
+            options={typeOptions}
+            onChange={setType}
+            isClearable
+            placeholder="Property Type"
+            className="toolbar-select"
+          />
+        </div>
 
-      {/* Property Type */}
-      <div className="form-group">
-        <label>Property Type</label>
-        <Select
-          options={typeOptions}
-          onChange={setType}
-          isClearable
-        />
+        {/* Max Price */}
+        <div className="toolbar-group">
+          <label>Max Price: £{price.toLocaleString()}</label>
+          <Slider
+            min={0}
+            max={5000000}
+            step={50000}
+            value={price}
+            onChange={setPrice}
+          />
+        </div>
+
+        {/* Bedrooms */}
+        <div className="toolbar-group">
+          <label>Beds: {bedrooms}</label>
+          <Slider
+            min={1}
+            max={8}
+            step={1}
+            value={bedrooms}
+            onChange={setBedrooms}
+          />
+        </div>
+
+        {/* Postcode */}
+        <div className="toolbar-group">
+          <label>Postcode</label>
+          <Select
+            options={postcodeOptions}
+            onChange={setPostcode}
+            isClearable
+            placeholder="Area"
+            className="toolbar-select"
+          />
+        </div>
+
+        {/* Search Action */}
+        <button className="toolbar-button" onClick={handleSearch}>
+          Find Homes
+        </button>
       </div>
-
-      {/* Price */}
-      <div className="form-group">
-        <label>Max Price: £{price.toLocaleString()}</label>
-        <Slider
-          min={0}
-          max={1500000}
-          step={25000}
-          value={price}
-          onChange={setPrice}
-        />
-      </div>
-
-      {/* Bedrooms */}
-      <div className="form-group">
-        <label>Bedrooms: 1 – {bedrooms}</label>
-        <Slider
-          min={1}
-          max={5}
-          step={1}
-          value={bedrooms}
-          onChange={setBedrooms}
-        />
-      </div>
-
-      {/* Date Added */}
-      <div className="form-group">
-        <label>Date Added (From)</label>
-        <DatePicker
-          selected={dateFrom}
-          onChange={(date) => setDateFrom(date)}
-          dateFormat="dd/MM/yyyy"
-          placeholderText="Select date"
-          isClearable
-        />
-      </div>
-
-      {/* Postcode */}
-      <div className="form-group">
-        <label>Postcode Area</label>
-        <Select
-          options={postcodeOptions}
-          onChange={setPostcode}
-          isClearable
-        />
-      </div>
-
-      {/* Button (allowed to navigate))*/}
-      <button className="search-button" onClick={handleSearch}>
-        Search Properties
-      </button>
     </div>
   );
 }
