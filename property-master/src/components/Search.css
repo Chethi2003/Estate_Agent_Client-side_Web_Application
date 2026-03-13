@@ -1,8 +1,8 @@
 .search-toolbar {
   width: 100%;
-  max-width: 1200px;
-  margin: -60px auto 40px;
-  padding: 20px 30px;
+  max-width: none;
+  margin: -60px 0 24px;
+  padding: 24px clamp(20px, 2vw, 32px);
   background: var(--bg-surface);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -15,15 +15,14 @@
 }
 
 .search-toolbar-grid {
-  display: flex;
-  align-items: flex-end;
-  gap: 24px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: 20px;
 }
 
 .toolbar-group {
-  flex: 1;
-  min-width: 180px;
+  min-width: 0;
 }
 
 .toolbar-group label {
@@ -38,7 +37,8 @@
 
 .toolbar-button {
   height: 50px;
-  padding: 0 40px;
+  padding: 0 32px;
+  min-width: 170px;
   background: var(--primary);
   color: #000;
   font-weight: 700;
@@ -137,21 +137,25 @@
 
 @media (max-width: 1024px) {
   .search-toolbar {
-    margin: 20px 5%;
-    width: auto;
+    margin: 0;
   }
-  
-  .toolbar-group {
-    min-width: 45%;
+
+  .search-toolbar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .toolbar-button {
+    grid-column: 1 / -1;
     width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .toolbar-group {
-    min-width: 100%;
+@media (max-width: 640px) {
+  .search-toolbar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar-button {
+    grid-column: auto;
   }
 }
