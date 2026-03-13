@@ -5,7 +5,7 @@ import "./PropertyPage.css";
 import Navigation from "../components/Navigation.jsx";
 import Footer from "../components/Footer.jsx";
 
-function PropertyPage({ favourites = [], onToggleFavourite }) {
+function PropertyPage({ favourites = [], onToggleFavourite, theme, toggleTheme }) {
   const { id } = useParams();
 
   const property = data.properties.find((p) => p.id === id);
@@ -25,7 +25,7 @@ function PropertyPage({ favourites = [], onToggleFavourite }) {
 
   return (
     <>
-      <Navigation />
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
 
       <div className="property-page">
         {/* image gallery */}

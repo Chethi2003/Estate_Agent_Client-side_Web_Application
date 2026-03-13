@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import "./Navigation.css";
 
-function Navigation() {
+function Navigation({ theme, toggleTheme }) {
   return (
     <nav className="navigation-bar">
       <div className="nav-logo">
@@ -14,7 +15,6 @@ function Navigation() {
           <Link to="/">Home</Link>
         </li>
 
-        {/*Scrolls to search panel */}
         <li className="nav-item">
           <Link to="/#search">Search</Link>
         </li>
@@ -29,6 +29,20 @@ function Navigation() {
 
         <li className="nav-item">
           <Link to="/contact">Contact Us</Link>
+        </li>
+
+        <li className="theme-toggle-item">
+          <button
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? (
+              <MdOutlineLightMode />
+            ) : (
+              <MdOutlineDarkMode />
+            )}
+          </button>
         </li>
       </ul>
     </nav>

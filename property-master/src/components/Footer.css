@@ -17,7 +17,7 @@
 .footer-section h3 {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -80,17 +80,17 @@
 }
 
 .social-icons a:hover {
-  color: #8be9fd;
+  color: var(--primary);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(139, 233, 253, 0.2);
+  box-shadow: 0 10px 20px var(--primary-glow);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--glass-border);
   text-align: center;
   padding: 25px;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
 }
 
 @media (max-width: 1024px) {

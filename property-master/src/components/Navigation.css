@@ -7,8 +7,8 @@
   align-items: center;
   padding: 1.25rem clamp(1.25rem, 5vw, 5rem);
   background: var(--bg-surface);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   transition: var(--transition-smooth);
@@ -87,4 +87,30 @@
   .nav-logo {
     font-size: 1.25rem;
   }
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary);
+  color: #000;
+  border-color: var(--primary);
+  transform: rotate(15deg);
+}
+
+[data-theme='light'] .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.05);
 }

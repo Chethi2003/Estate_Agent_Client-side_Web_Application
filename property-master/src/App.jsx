@@ -9,6 +9,16 @@ import ContactUs from "./pages/ContactUs";
 
 function App() {
   const [favourites, setFavourites] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   useEffect(() => {
     const stored =
@@ -39,11 +49,13 @@ function App() {
           <Home
             favourites={favourites}
             onToggleFavourite={toggleFavourite}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         }
       />
 
-      <Route path="/about" element={<AboutUs />} />
+      <Route path="/about" element={<AboutUs theme={theme} toggleTheme={toggleTheme} />} />
 
       <Route
         path="/search"
@@ -51,6 +63,8 @@ function App() {
           <Properties
             favourites={favourites}
             onToggleFavourite={toggleFavourite}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         }
       />
@@ -61,11 +75,13 @@ function App() {
           <PropertyPage
             favourites={favourites}
             onToggleFavourite={toggleFavourite}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         }
       />
 
-      <Route path="/contact" element={<ContactUs />} />
+      <Route path="/contact" element={<ContactUs theme={theme} toggleTheme={toggleTheme} />} />
     </Routes>
   );
 }

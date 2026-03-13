@@ -11,7 +11,7 @@ import PropertyList from "../components/PropertyList";
 
 import propertiesData from "../data/properties.json";
 
-function Home({ favourites, onToggleFavourite }) {
+function Home({ favourites, onToggleFavourite, theme, toggleTheme }) {
   const allProperties = propertiesData.properties;
 
   const [filteredProperties, setFilteredProperties] =
@@ -64,7 +64,7 @@ function Home({ favourites, onToggleFavourite }) {
 
   return (
     <>
-      <Navigation />
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
       <Welcome />
 
       <div className="main-content">

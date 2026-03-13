@@ -4,10 +4,10 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
-function ContactUs() {
+function ContactUs({ theme, toggleTheme }) {
   return (
     <>
-      <Navigation />
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
 
       <div className="contact-page">
         {/* hero */}

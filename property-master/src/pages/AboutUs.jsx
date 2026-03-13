@@ -4,10 +4,10 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { FaHome, FaHandshake, FaMapMarkerAlt } from "react-icons/fa";
 
-function AboutUs() {
+function AboutUs({ theme, toggleTheme }) {
   return (
     <>
-      <Navigation />
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
 
       <div className="about-page">
         {/* HERO */}

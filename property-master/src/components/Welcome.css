@@ -34,11 +34,20 @@
   height: 100%;
   background: linear-gradient(
     180deg, 
-    rgba(15, 23, 42, 0.4) 0%, 
-    rgba(15, 23, 42, 0.8) 50%, 
+    rgba(15, 23, 42, 0.3) 0%, 
+    rgba(15, 23, 42, 0.6) 40%, 
     var(--bg-deep) 100%
   );
   z-index: -1;
+}
+
+[data-theme='light'] .welcome-container::after {
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(248, 250, 252, 0.7) 50%, 
+    var(--bg-deep) 100%
+  );
 }
 
 .welcome-title {
@@ -54,6 +63,12 @@
   margin-bottom: 1.5rem;
   max-width: 900px;
   animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-theme='light'] .welcome-title {
+  background: linear-gradient(to bottom, #0f172a 30%, #475569 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .welcome-subtitle {
