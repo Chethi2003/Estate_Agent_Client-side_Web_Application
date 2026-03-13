@@ -64,6 +64,7 @@ function Search({ onSearch }) {
             isClearable
             placeholder="Property Type"
             className="toolbar-select"
+            classNamePrefix="react-select"
           />
         </div>
 
@@ -100,6 +101,7 @@ function Search({ onSearch }) {
             isClearable
             placeholder="Area"
             className="toolbar-select"
+            classNamePrefix="react-select"
           />
         </div>
 
