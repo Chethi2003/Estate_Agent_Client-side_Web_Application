@@ -38,6 +38,7 @@
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center; /* Ensure vertical center alignment */
   gap: 2.5rem;
   margin: 0;
   padding: 0;
@@ -49,6 +50,12 @@
   color: var(--text-secondary);
   position: relative;
   transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-item {
+  margin-left: 1.5rem; /* Add extra space to separate button from links */
 }
 
 .nav-item:hover {
