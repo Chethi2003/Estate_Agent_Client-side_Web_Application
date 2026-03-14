@@ -6,6 +6,7 @@ import Navigation from "../components/Navigation";
 import Welcome from "../components/Welcome";
 import Search from "../components/Search";
 import Favourites from "../components/Favourites";
+import Chatbot from "../components/chatBot";
 import Footer from "../components/Footer";
 import PropertyList from "../components/PropertyList";
 
@@ -17,6 +18,8 @@ function Home({ favourites, onToggleFavourite, theme, toggleTheme }) {
   const [filteredProperties, setFilteredProperties] =
     useState(allProperties);
   const [isFavouritesOpen, setIsFavouritesOpen] =
+    useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] =
     useState(false);
 
   const location = useLocation();
@@ -127,6 +130,35 @@ function Home({ favourites, onToggleFavourite, theme, toggleTheme }) {
             allProperties={allProperties}
             onAddFavourite={onToggleFavourite}
           />
+        </div>
+      </div>
+
+      <div
+        className={`chatbot-overlay ${isChatbotOpen ? "is-open" : ""}`}
+      >
+        <button
+          type="button"
+          className="chatbot-trigger"
+          onClick={() =>
+            setIsChatbotOpen((previousState) => !previousState)
+          }
+          aria-expanded={isChatbotOpen}
+          aria-controls="floating-chatbot-panel"
+          aria-label={
+            isChatbotOpen
+              ? "Hide chatbot assistant"
+              : "Show chatbot assistant"
+          }
+        >
+          <span className="chatbot-trigger-icon">✦</span>
+          <span className="chatbot-trigger-label">Assistant</span>
+        </button>
+
+        <div
+          className="chatbot-overlay-panel"
+          id="floating-chatbot-panel"
+        >
+          <Chatbot />
         </div>
       </div>
 
