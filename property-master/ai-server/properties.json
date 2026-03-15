@@ -1,0 +1,628 @@
+{
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home set on a popular residential road in Petts Wood, around 0.5 miles from the station for fast links into London and within easy reach of local shops, supermarkets, schools, bus routes and National Trust woodland for weekend walks.<br>The house offers two reception rooms, an 18'9 x 10'1 fitted kitchen/breakfast room, a bright conservatory, utility room and ground-floor cloakroom, giving flexible space for family life and entertaining.<br>Upstairs there are three well-proportioned bedrooms and a family bathroom with separate WC, while outside the property benefits from a well-kept garden, double glazing, gas central heating and a calm setting close to town without feeling busy.",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "images/propmodhouse.webp",
+      "images": [
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
+      ],
+      "floorPlan": "images/propmodfloor.webp",
+      "url": "properties/prop1.html",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order, this two double bedroom, two bathroom garden flat is well placed on Crofton Road, close to Orpington town centre, local supermarkets, well-regarded schools, cafes and convenient transport links.<br>The modern fitted kitchen opens into a bright living room with solid wooden floors and integrated appliances including a dishwasher and washing machine, while bi-folding doors lead onto a secluded private courtyard garden that creates a calm outdoor retreat.<br>Both bedrooms are generous doubles and the layout is completed by a stylish family bathroom, a separate wet room and practical built-in storage, making it an ideal home for buyers wanting town convenience with private outside space.",
+      "location": "Crofton Road, Orpington BR6",
+      "picture": "images/propflat.webp",
+      "images": [
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propflatfloor.webp",
+      "url": "properties/prop2.html",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop3",
+      "type": "Detached House",
+      "bedrooms": 4,
+      "price": 1250000,
+      "tenure": "Freehold",
+      "description": "Spacious four bedroom detached house set in a quiet, leafy part of Chislehurst, within easy reach of the high street, reputable schools, parks and road links, giving a peaceful environment with everyday amenities still close by.<br>The home offers generous open-plan living and dining areas, a fitted kitchen with breakfast space, two bathrooms and plenty of room for family routines, entertaining and home working.<br>Outside, a large driveway and double garage provide ample parking, while the landscaped rear garden creates a private setting for children's play, summer dining and relaxed evenings.",
+      "location": "Chislehurst Road, Chislehurst BR7",
+      "picture": "images/prop3.webp",
+      "images": [
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propdetfloor.webp",
+      "url": "properties/prop3.html",
+      "added": {
+        "month": "August",
+        "day": 5,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop4",
+      "type": "Apartment",
+      "bedrooms": 1,
+      "price": 275000,
+      "tenure": "Leasehold",
+      "description": "Modern one bedroom apartment positioned in the heart of Bromley town centre, moments from shops, supermarkets, restaurants, leisure facilities and excellent rail and bus connections for commuting across London.<br>The apartment features a bright open-plan living space, a sleek fitted kitchen, a generous double bedroom and a contemporary bathroom, all finished in a clean modern style with good natural light.<br>A private balcony, secure entry system and the convenience of being close to parks as well as the high street make this a strong option for first-time buyers or investors.",
+      "location": "High Street, Bromley BR1",
+      "picture": "images/propapart.webp",
+      "images": [
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
+      ],
+      "floorPlan": "images/propapartfloor.webp",
+      "url": "properties/prop4.html",
+      "added": {
+        "month": "July",
+        "day": 22,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop5",
+      "type": "Bungalow",
+      "bedrooms": 3,
+      "price": 595000,
+      "tenure": "Freehold",
+      "description": "Well-maintained three bedroom bungalow set in a peaceful residential avenue in Sidcup, within easy reach of local shops, supermarkets, bus routes, green open spaces and a short drive from the town centre and rail services.<br>Designed for comfortable single-level living, the home includes a spacious living room, fitted kitchen, bright conservatory, three versatile bedrooms and a family bathroom, making it suitable for downsizers and families alike.<br>Outside, there is a mature rear garden with space for planting and summer seating, plus off-street parking to the front and a calm neighbourhood atmosphere that is hard to find so close to daily amenities.",
+      "location": "Oak Avenue, Sidcup DA14",
+      "picture": "images/propbung.webp",
+      "images": [
+        "images/propbung.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propbungfloor.webp",
+      "url": "properties/prop5.html",
+      "added": {
+        "month": "June",
+        "day": 10,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Terraced House",
+      "bedrooms": 3,
+      "price": 485000,
+      "tenure": "Freehold",
+      "description": "A well-presented three bedroom terraced house set on a convenient residential road in Bexleyheath, close to schools, supermarkets, the Broadway shopping area and public transport, while still enjoying a settled neighbourhood feel.<br>The property offers a bright through lounge, a modern fitted kitchen, three bedrooms and a family bathroom, with practical proportions that work well for first-time buyers, young families or investors.<br>A low-maintenance rear garden provides useful outdoor space for children, pets or summer dining, and the home also benefits from good storage and straightforward access into town and commuter routes.",
+      "location": "Maple Road, Bexleyheath DA6",
+      "picture": "images/propterra.webp",
+      "images": [
+        "images/propterra.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propterrafloor.webp",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "May",
+        "day": 18,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "Semi-Detached House",
+      "bedrooms": 4,
+      "price": 825000,
+      "tenure": "Freehold",
+      "description": "An extended four bedroom semi-detached family home tucked away in a quiet cul-de-sac in Beckenham, close to excellent schools, local parks, supermarkets and main commuter routes while retaining a calm residential setting.<br>The accommodation includes a spacious open-plan kitchen and dining area, two bathrooms, multiple reception zones and four well-sized bedrooms, offering the flexibility modern families usually struggle to find.<br>Outside, there is off-street parking and a south-facing garden ideal for outdoor dining, children's play or gardening, making the house equally practical for daily living and weekend entertaining.",
+      "location": "Willow Close, Beckenham BR3",
+      "picture": "images/propsemidet.webp",
+      "images": [
+        "images/propsemidet.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propsemidetfloor.webp",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "April",
+        "day": 2,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop8",
+      "type": "Villa",
+      "bedrooms": 5,
+      "price": 2500000,
+      "tenure": "Freehold",
+      "description": "Luxurious five bedroom smart villa set in one of north London's more prestigious residential locations, close to quality schools, boutique shopping, restaurants and large green spaces, giving privacy without isolation from town amenities.<br>The property centres around a dramatic double-height living room and a chef's kitchen, while additional highlights include several designer bathrooms, a private wellness suite, bespoke storage and seamless smart-home control throughout.<br>Outside, the infinity pool, expansive landscaped gardens and secure parking create a resort-style atmosphere that feels calm and exclusive, with plenty of room for entertaining on a grand scale.",
+      "location": "Broad Walk, London N21",
+      "picture": "images/propdet1.webp",
+      "images": [
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propdetfloor.webp",
+      "url": "properties/prop8.html",
+      "added": {
+        "month": "March",
+        "day": 10,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop9",
+      "type": "Penthouse",
+      "bedrooms": 3,
+      "price": 1850000,
+      "tenure": "Leasehold",
+      "description": "Ultra-modern three bedroom penthouse in Canary Wharf with panoramic skyline views and a prime waterside setting near the docks, river walks, high-end shops, restaurants, gyms and fast transport links including the Elizabeth line and DLR.<br>Inside, wrap-around floor-to-ceiling windows flood the apartment with light and frame the city outlook, while the generous open-plan living area, designer kitchen, three bedrooms and two luxury bathrooms deliver both style and practicality.<br>An expansive private sky terrace and state-of-the-art smart home integration complete a standout home for buyers wanting central convenience, private outdoor space and a prestigious address.",
+      "location": "Canary Wharf, London E14",
+      "picture": "images/propapart1.webp",
+      "images": [
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
+      ],
+      "floorPlan": "images/propapartfloor.webp",
+      "url": "properties/prop9.html",
+      "added": {
+        "month": "February",
+        "day": 15,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop10",
+      "type": "Studio",
+      "bedrooms": 1,
+      "price": 275000,
+      "tenure": "Leasehold",
+      "description": "A sleek studio flat in the heart of Shoreditch, surrounded by cafes, supermarkets, galleries, markets and stations, making it ideal for buyers who want to live near the energy of the city while keeping everything within walking distance.<br>The interior is cleverly planned with space-saving built-in storage, a stylish minimalist kitchen, a modern shower room and a bright living and sleeping area that makes the most of natural light.<br>This low-maintenance home suits professionals or investors looking for a smart central base with strong lifestyle appeal, quick transport connections and all the day-to-day amenities close at hand.",
+      "location": "Shoreditch High St, London E1",
+      "picture": "images/propflat1.webp",
+      "images": [
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propflatfloor.webp",
+      "url": "properties/prop10.html",
+      "added": {
+        "month": "January",
+        "day": 5,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop11",
+      "type": "Cottage",
+      "bedrooms": 2,
+      "price": 450000,
+      "tenure": "Freehold",
+      "description": "Charming two bedroom character cottage positioned on a quiet lane in the Sevenoaks area, surrounded by village character, open countryside and nearby everyday essentials such as local shops, pubs, schools and road links into town.<br>Period details including exposed wooden beams and a traditional inglenook fireplace give the home warmth and individuality, while the layout also provides a cosy sitting room, fitted kitchen, upstairs bathroom and useful nooks for storage or home working.<br>The English rose garden adds a peaceful outdoor retreat for planting and summer afternoons, making this an appealing choice for buyers wanting rural atmosphere without being cut off from amenities.",
+      "location": "Church Lane, Sevenoaks TN13",
+      "picture": "images/propmod1.webp",
+      "images": [
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
+      ],
+      "floorPlan": "images/propmodfloor.webp",
+      "url": "properties/prop11.html",
+      "added": {
+        "month": "November",
+        "day": 20,
+        "year": 2023
+      }
+    },
+    {
+      "id": "prop12",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 910000,
+      "tenure": "Freehold",
+      "description": "Spacious four bedroom family house on a well-connected road in Petts Wood, close to the station, supermarkets, schools, cafes and woodland walks, so it balances commuter convenience with a calm suburban setting.<br>The layout includes two reception rooms, a kitchen and dining area, a separate utility space, four bedrooms and two bathrooms, giving enough flexibility for larger families or buyers needing room to work from home.<br>Outside, the property offers a private rear garden, a garage and driveway parking, making it a practical long-term home in an area that remains popular with families.",
+      "location": "Queensway, Petts Wood BR5",
+      "picture": "images/propmodhouse.webp",
+      "images": [
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
+      ],
+      "floorPlan": "images/propmodfloor.webp",
+      "url": "properties/prop12.html",
+      "added": {
+        "month": "November",
+        "day": 8,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop13",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 425000,
+      "tenure": "Leasehold",
+      "description": "Bright two bedroom flat near Bromley South and local shopping parades, with supermarkets, restaurants, schools and leisure facilities all close by, making daily life easy without needing to travel far.<br>The home includes an open-plan lounge and kitchen, two well-sized bedrooms, two bathrooms and good built-in storage, with a layout that suits professionals, sharers or smaller families.<br>A private balcony, secure entry system and allocated parking add further appeal, especially for buyers wanting apartment living in a convenient town-edge location.",
+      "location": "Station Road, Bromley BR2",
+      "picture": "images/propflat.webp",
+      "images": [
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propflatfloor.webp",
+      "url": "properties/prop13.html",
+      "added": {
+        "month": "October",
+        "day": 19,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop14",
+      "type": "Detached House",
+      "bedrooms": 5,
+      "price": 1495000,
+      "tenure": "Freehold",
+      "description": "Impressive five bedroom detached house on a leafy residential avenue in Chislehurst, close to well-regarded schools, village amenities, parks and road links, with a quiet environment that feels tucked away from the busier town centre.<br>The interior provides three reception spaces, a large kitchen with island and dining area, a study, five bedrooms and three bathrooms, making it well suited to established families.<br>Gated driveway parking, a double garage and a landscaped rear garden complete a property designed for buyers who want space, privacy and a strong family location.",
+      "location": "Ravenswood Avenue, Chislehurst BR7",
+      "picture": "images/prop3.webp",
+      "images": [
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propdetfloor.webp",
+      "url": "properties/prop14.html",
+      "added": {
+        "month": "September",
+        "day": 27,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop15",
+      "type": "Apartment",
+      "bedrooms": 2,
+      "price": 365000,
+      "tenure": "Leasehold",
+      "description": "Modern two bedroom apartment set close to Bromley town centre, with shops, restaurants, gyms, supermarkets and rail links all nearby, while a number of local green spaces help soften the central setting.<br>The apartment offers an open-plan living and dining room, a fitted kitchen, two bedrooms and a contemporary bathroom, with large windows helping the main living area feel bright and open.<br>A private balcony, lift access and secure communal entrance make it a practical low-maintenance option for first-time buyers, downsizers or investors.",
+      "location": "Widmore Road, Bromley BR1",
+      "picture": "images/propapart.webp",
+      "images": [
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
+      ],
+      "floorPlan": "images/propapartfloor.webp",
+      "url": "properties/prop15.html",
+      "added": {
+        "month": "August",
+        "day": 14,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop16",
+      "type": "Bungalow",
+      "bedrooms": 3,
+      "price": 625000,
+      "tenure": "Freehold",
+      "description": "Appealing three bedroom bungalow on a quiet no-through road in Sidcup, close to local shops, bus routes, a supermarket, healthcare services and open green spaces, making it especially convenient for relaxed day-to-day living.<br>The accommodation is arranged over one level and includes a generous lounge, kitchen and breakfast area, conservatory, three bedrooms and two bathrooms, giving buyers comfortable space without stairs.<br>A detached garage, driveway and a well-screened rear garden provide extra practicality and privacy, while the wider neighbourhood has a settled, calm feel.",
+      "location": "Birch Lane, Sidcup DA15",
+      "picture": "images/propbung.webp",
+      "images": [
+        "images/propbung.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propbungfloor.webp",
+      "url": "properties/prop16.html",
+      "added": {
+        "month": "July",
+        "day": 11,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop17",
+      "type": "Terraced House",
+      "bedrooms": 3,
+      "price": 510000,
+      "tenure": "Freehold",
+      "description": "Smart three bedroom terraced house in Welling, within easy reach of schools, supermarkets, everyday shops and transport connections, while nearby parks help the area feel balanced rather than overly urban.<br>Inside there is a through lounge, fitted kitchen, downstairs WC, first-floor shower room and three good bedrooms, creating a layout that works well for families or buyers moving up from an apartment.<br>The rear garden is designed for easy upkeep and there is useful rear access, so the property offers convenience both inside and out.",
+      "location": "Elm Grove, Welling DA16",
+      "picture": "images/propterra.webp",
+      "images": [
+        "images/propterra.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propterrafloor.webp",
+      "url": "properties/prop17.html",
+      "added": {
+        "month": "June",
+        "day": 3,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop18",
+      "type": "Semi-Detached House",
+      "bedrooms": 4,
+      "price": 875000,
+      "tenure": "Freehold",
+      "description": "Extended four bedroom semi-detached house on a popular road in Beckenham, positioned near schools, supermarkets, commuter links and local parks, with a family-friendly atmosphere throughout the neighbourhood.<br>The property features two reception rooms, an open kitchen and family area, four bedrooms and two bathrooms, offering generous living space for growing households.<br>A west-facing garden, garage and off-street parking make the house highly practical, especially for buyers looking for extra room without losing access to town amenities.",
+      "location": "Manor Way, Beckenham BR3",
+      "picture": "images/propsemidet.webp",
+      "images": [
+        "images/propsemidet.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propsemidetfloor.webp",
+      "url": "properties/prop18.html",
+      "added": {
+        "month": "May",
+        "day": 21,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop19",
+      "type": "Villa",
+      "bedrooms": 6,
+      "price": 2950000,
+      "tenure": "Freehold",
+      "description": "Exceptional six bedroom villa on The Ridgeway in north London, close to premier schools, quality dining, boutique shopping and extensive green surroundings, offering a calm and private setting with strong access to the city.<br>The house includes multiple reception rooms, a statement kitchen, four luxury bathrooms, a cinema room, gym space and advanced smart-home controls, giving it a genuinely high-spec finish throughout.<br>Outside, the heated pool, triple garage and sweeping landscaped gardens create a resort-style feel that will suit buyers looking for privacy, scale and entertainment space.",
+      "location": "The Ridgeway, London N21",
+      "picture": "images/propdet1.webp",
+      "images": [
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propdetfloor.webp",
+      "url": "properties/prop19.html",
+      "added": {
+        "month": "April",
+        "day": 9,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop20",
+      "type": "Penthouse",
+      "bedrooms": 4,
+      "price": 2100000,
+      "tenure": "Leasehold",
+      "description": "Striking four bedroom penthouse near West India Quay with immediate access to river walks, dockside restaurants, premium shopping and fast public transport, placing it in one of London's most connected waterside districts.<br>The apartment offers dramatic glazing, a large open-plan living and dining space, designer kitchen, four bedrooms and three bathrooms, combining a luxury finish with practical family-sized accommodation.<br>A wraparound terrace, concierge service, residents' gym and secure parking elevate the lifestyle offer and make this a strong statement property.",
+      "location": "West India Quay, London E14",
+      "picture": "images/propapart1.webp",
+      "images": [
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
+      ],
+      "floorPlan": "images/propapartfloor.webp",
+      "url": "properties/prop20.html",
+      "added": {
+        "month": "March",
+        "day": 30,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop21",
+      "type": "Studio",
+      "bedrooms": 1,
+      "price": 299950,
+      "tenure": "Leasehold",
+      "description": "Well-designed studio apartment close to Old Street, surrounded by cafes, supermarkets, work hubs and quick transport connections, making it ideal for buyers who want a lively central environment with everyday convenience on the doorstep.<br>The interior uses smart storage, a fitted kitchen, a contemporary shower room and a bright open-plan living area to make efficient use of space without feeling cramped.<br>Secure entry and access to shared outdoor space add to the appeal for professionals or investors seeking a straightforward city base.",
+      "location": "Old Street, London EC1V",
+      "picture": "images/propflat1.webp",
+      "images": [
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propflatfloor.webp",
+      "url": "properties/prop21.html",
+      "added": {
+        "month": "February",
+        "day": 18,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop22",
+      "type": "Cottage",
+      "bedrooms": 3,
+      "price": 525000,
+      "tenure": "Freehold",
+      "description": "Characterful three bedroom cottage on Mill Lane in Westerham, surrounded by countryside and village charm while remaining close to local shops, pubs, schools and road links for practical daily living.<br>The home includes a cosy sitting room with fireplace, a kitchen and dining space, family bathroom, ground-floor cloakroom and three bedrooms, blending period feel with useful everyday function.<br>A cottage garden with established planting and seating areas gives the house a peaceful outdoor setting that will appeal to buyers looking for charm and a calmer environment.",
+      "location": "Mill Lane, Westerham TN16",
+      "picture": "images/propmod1.webp",
+      "images": [
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
+      ],
+      "floorPlan": "images/propmodfloor.webp",
+      "url": "properties/prop22.html",
+      "added": {
+        "month": "January",
+        "day": 7,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop23",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 685000,
+      "tenure": "Freehold",
+      "description": "Well-kept three bedroom house in West Wickham, conveniently placed near the high street, schools, supermarkets and parkland, with a location that feels residential but not isolated from daily amenities.<br>The accommodation includes a comfortable front reception, kitchen and dining area, an additional study or playroom, three bedrooms and a modern family bathroom.<br>A driveway and a good-sized rear garden make the property especially attractive to young families wanting outdoor space and easy access to town facilities.",
+      "location": "Cedar Drive, West Wickham BR4",
+      "picture": "images/propmodhouse.webp",
+      "images": [
+        "images/propmod1.webp",
+        "images/propmod2.webp",
+        "images/propmod3.webp",
+        "images/propmod4.webp",
+        "images/propmod5.webp"
+      ],
+      "floorPlan": "images/propmodfloor.webp",
+      "url": "properties/prop23.html",
+      "added": {
+        "month": "December",
+        "day": 12,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop24",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 389950,
+      "tenure": "Leasehold",
+      "description": "Contemporary two bedroom flat close to Orpington amenities, including supermarkets, schools, cafes and transport services, while also sitting within easy reach of local green spaces for weekend walks.<br>The property provides an open-plan kitchen and reception room, two bedrooms, two bathrooms and useful storage, making it a practical choice for first-time buyers, couples or investors.<br>A balcony, communal grounds and allocated parking give this home a strong balance of convenience, comfort and manageable upkeep.",
+      "location": "Keston Road, Orpington BR6",
+      "picture": "images/propflat.webp",
+      "images": [
+        "images/propflat1.webp",
+        "images/propflat2.webp",
+        "images/propflat3.webp",
+        "images/propflat4.webp",
+        "images/propflat5.webp"
+      ],
+      "floorPlan": "images/propflatfloor.webp",
+      "url": "properties/prop24.html",
+      "added": {
+        "month": "November",
+        "day": 2,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop25",
+      "type": "Detached House",
+      "bedrooms": 4,
+      "price": 1325000,
+      "tenure": "Freehold",
+      "description": "Substantial four bedroom detached house in Bexley, located on a sought-after road near schools, local shops, supermarkets and pockets of woodland, creating a quieter setting that still has strong everyday convenience.<br>The house includes a large kitchen and family room, separate lounge, utility room, four bedrooms and three bathrooms, giving it the scale expected of a premium family home.<br>A double garage, broad driveway and mature rear garden provide the outside space and parking many buyers want but rarely find together.",
+      "location": "Parkhurst Road, Bexley DA5",
+      "picture": "images/prop3.webp",
+      "images": [
+        "images/propdet1.webp",
+        "images/propdet2.webp",
+        "images/propdet3.webp",
+        "images/propdet4.webp",
+        "images/propdet5.webp"
+      ],
+      "floorPlan": "images/propdetfloor.webp",
+      "url": "properties/prop25.html",
+      "added": {
+        "month": "October",
+        "day": 6,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop26",
+      "type": "Apartment",
+      "bedrooms": 1,
+      "price": 312500,
+      "tenure": "Leasehold",
+      "description": "Stylish one bedroom apartment on College Road in Bromley, close to stations, shopping, restaurants and public green space, making it ideal for buyers who want central access without being directly on a busy high street.<br>The property offers a bright living room, fitted kitchen, double bedroom and modern bathroom, with a layout that feels easy to maintain and comfortable to live in.<br>A private terrace, secure entrance and lift access add further convenience, helping this apartment stand out in the local market.",
+      "location": "College Road, Bromley BR1",
+      "picture": "images/propapart.webp",
+      "images": [
+        "images/propapart1.webp",
+        "images/propapart2.webp",
+        "images/propapart3.webp",
+        "images/propapart4.webp",
+        "images/propapart5.webp"
+      ],
+      "floorPlan": "images/propapartfloor.webp",
+      "url": "properties/prop26.html",
+      "added": {
+        "month": "September",
+        "day": 16,
+        "year": 2024
+      }
+    }
+  ]
+}
