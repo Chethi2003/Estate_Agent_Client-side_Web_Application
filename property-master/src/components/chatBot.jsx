@@ -40,7 +40,7 @@ function Chatbot() {
     setIsSending(true);
 
     try {
-      const res = await fetch("http://localhost:5000/chat", {
+      const res = await fetch("https://estate-agent-client-side-web-application.onrender.com/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
