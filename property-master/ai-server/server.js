@@ -168,7 +168,7 @@ function isPropertySearch(rawMessage) {
   return hasKeyword && (hasConstraint || hasStrongIntent);
 }
 
-function getRecommendedProperties(rawMessage, availableProperties, limit = 3) {
+function getRecommendedProperties(rawMessage, availableProperties) {
   if (!isPropertySearch(rawMessage)) {
     return [];
   }
@@ -238,13 +238,12 @@ function getRecommendedProperties(rawMessage, availableProperties, limit = 3) {
     }
   }
 
-  return candidates
-    .sort(
-      (a, b) =>
-        b.score - a.score || a.property.price - b.property.price
-    )
-    .slice(0, limit)
-    .map(({ property }) => ({
+return candidates
+  .sort(
+    (a, b) =>
+      b.score - a.score || a.property.price - b.property.price
+  )
+  .map(({ property }) => ({
       id: property.id,
       type: property.type,
       bedrooms: property.bedrooms,
@@ -271,7 +270,6 @@ app.post("/chat", async (req, res) => {
     const recommendations = getRecommendedProperties(
       rawMessage,
       properties,
-      3
     );
 
     if (recommendations.length > 0) {
@@ -294,27 +292,51 @@ app.post("/chat", async (req, res) => {
     const prompt = `
 You are an AI property assistant for the Grand Abode real estate platform.
 
-A user is looking for a property.
-
 User request:
 ${rawMessage}
 
-Here are the available properties in the system:
+Available properties:
 ${JSON.stringify(sampleProperties, null, 2)}
 
-Your task:
-- Answer the user in 2-4 sentences.
-- Do not output links, markdown, HTML, file paths, or raw IDs.
-- If recommending properties, mention type, bedrooms, price and location in plain text.
-- Only reference properties from the provided list.
-- Be concise and helpful.
+Rules:
+- Recommend properties from the list.
+- Return ONLY property IDs in JSON format.
+- Example format:
+{
+  "properties": [1,4,7]
+}
+
+Do not include explanations or text.
 `;
 
     const result = await model.generateContent(prompt);
 
-    const reply = result.response.text();
+    let aiText = result.response.text();
 
-    res.json({ reply, listings: [] });
+let recommendedIds = [];
+
+try {
+  const parsed = JSON.parse(aiText);
+  recommendedIds = parsed.properties || [];
+} catch (e) {
+  console.error("AI JSON parse failed:", aiText);
+}
+
+const listings = properties
+  .filter(p => recommendedIds.includes(p.id))
+  .map(property => ({
+    id: property.id,
+    type: property.type,
+    bedrooms: property.bedrooms,
+    price: property.price,
+    location: property.location,
+    pageUrl: `/property/${property.id}`
+  }));
+
+res.json({
+  reply: "Here are some properties that match your request:",
+  listings
+});
 
   } catch (error) {
 
