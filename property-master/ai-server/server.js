@@ -21,10 +21,268 @@ const propertiesData = JSON.parse(
 // Extract the actual array
 const properties = propertiesData.properties;
 
+const SEARCH_KEYWORDS = [
+  "property",
+  "properties",
+  "home",
+  "homes",
+  "house",
+  "flat",
+  "apartment",
+  "bungalow",
+  "villa",
+  "penthouse",
+  "studio",
+  "budget",
+  "price",
+  "under",
+  "below",
+  "less",
+  "max",
+  "buy",
+  "bedroom",
+  "bedrooms",
+  "bed",
+  "find",
+  "looking",
+  "search"
+];
+
+const STOP_WORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "are",
+  "around",
+  "at",
+  "below",
+  "best",
+  "for",
+  "from",
+  "home",
+  "homes",
+  "house",
+  "i",
+  "in",
+  "is",
+  "looking",
+  "me",
+  "my",
+  "of",
+  "on",
+  "or",
+  "please",
+  "properties",
+  "property",
+  "show",
+  "than",
+  "that",
+  "the",
+  "to",
+  "under",
+  "up",
+  "with"
+]);
+
+function normalizeText(value = "") {
+  return String(value).toLowerCase();
+}
+
+function parseAmount(value, suffix) {
+  const numericValue = Number(String(value).replace(/,/g, ""));
+
+  if (!Number.isFinite(numericValue)) {
+    return null;
+  }
+
+  if (suffix?.toLowerCase() === "k") {
+    return numericValue * 1000;
+  }
+
+  if (suffix?.toLowerCase() === "m") {
+    return numericValue * 1000000;
+  }
+
+  return numericValue;
+}
+
+function extractBudget(rawMessage) {
+  const message = normalizeText(rawMessage);
+
+  const contextualBudget = message.match(
+    /(?:under|below|less than|max(?:imum)?|up to|budget(?: is| of)?|around|about)\s*[£]?\s*(\d{1,3}(?:,\d{3})+|\d+)(?:\s*(k|m))?/i
+  );
+
+  if (contextualBudget) {
+    const amount = parseAmount(contextualBudget[1], contextualBudget[2]);
+    return amount && amount >= 50000 ? amount : null;
+  }
+
+  const absoluteBudget = message.match(
+    /[£]?\s*(\d{1,3}(?:,\d{3})+|\d{5,})(?:\s*(k|m))?/i
+  );
+
+  if (!absoluteBudget) {
+    return null;
+  }
+
+  const amount = parseAmount(absoluteBudget[1], absoluteBudget[2]);
+  return amount && amount >= 50000 ? amount : null;
+}
+
+function extractBedrooms(rawMessage) {
+  const bedroomMatch = normalizeText(rawMessage).match(
+    /(\d+)\s*(?:bed|beds|bedroom|bedrooms)\b/i
+  );
+
+  if (!bedroomMatch) {
+    return null;
+  }
+
+  const bedrooms = Number(bedroomMatch[1]);
+  return Number.isFinite(bedrooms) ? bedrooms : null;
+}
+
+function extractQueryTerms(rawMessage) {
+  return normalizeText(rawMessage)
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((term) => term.length > 1)
+    .filter((term) => !STOP_WORDS.has(term))
+    .filter((term) => !/^\d+$/.test(term));
+}
+
+function isPropertySearch(rawMessage) {
+  const message = normalizeText(rawMessage);
+  const hasKeyword = SEARCH_KEYWORDS.some((keyword) =>
+    message.includes(keyword)
+  );
+  const hasConstraint =
+    extractBudget(message) !== null ||
+    /(\d+)\s*(?:bed|beds|bedroom|bedrooms)\b/i.test(message);
+  const hasStrongIntent =
+    /\b(property|properties|home|homes|house|flat|apartment|bungalow|villa|penthouse|studio|find|search|looking|buy)\b/i.test(
+      message
+    );
+
+  return hasKeyword && (hasConstraint || hasStrongIntent);
+}
+
+function getRecommendedProperties(rawMessage, availableProperties, limit = 3) {
+  if (!isPropertySearch(rawMessage)) {
+    return [];
+  }
+
+  const budget = extractBudget(rawMessage);
+  const bedrooms = extractBedrooms(rawMessage);
+  const queryTerms = extractQueryTerms(rawMessage);
+
+  let candidates = availableProperties.map((property) => {
+    let score = 0;
+    const location = normalizeText(property.location);
+    const type = normalizeText(property.type);
+    const postcode = (property.location.match(/\b[A-Z]{1,2}\d{1,2}\b/i)?.[0] || "").toLowerCase();
+
+    if (budget !== null) {
+      if (property.price <= budget) {
+        score += 6;
+      } else {
+        score -= 4;
+      }
+    }
+
+    if (bedrooms !== null) {
+      if (property.bedrooms === bedrooms) {
+        score += 4;
+      } else if (property.bedrooms < bedrooms) {
+        score += 1;
+      } else {
+        score -= 2;
+      }
+    }
+
+    queryTerms.forEach((term) => {
+      if (location.includes(term)) {
+        score += 2;
+      }
+
+      if (type.includes(term)) {
+        score += 2;
+      }
+
+      if (postcode && term === postcode) {
+        score += 3;
+      }
+    });
+
+    return { property, score };
+  });
+
+  if (budget !== null) {
+    const underBudget = candidates.filter(
+      ({ property }) => property.price <= budget
+    );
+
+    if (underBudget.length > 0) {
+      candidates = underBudget;
+    }
+  }
+
+  if (bedrooms !== null) {
+    const exactBedrooms = candidates.filter(
+      ({ property }) => property.bedrooms === bedrooms
+    );
+
+    if (exactBedrooms.length > 0) {
+      candidates = exactBedrooms;
+    }
+  }
+
+  return candidates
+    .sort(
+      (a, b) =>
+        b.score - a.score || a.property.price - b.property.price
+    )
+    .slice(0, limit)
+    .map(({ property }) => ({
+      id: property.id,
+      type: property.type,
+      bedrooms: property.bedrooms,
+      price: property.price,
+      location: property.location,
+      pageUrl: `/property/${property.id}`
+    }));
+}
+
 app.post("/chat", async (req, res) => {
   try {
+    const rawMessage =
+      typeof req.body?.message === "string"
+        ? req.body.message.trim()
+        : "";
 
-    const { message } = req.body;
+    if (!rawMessage) {
+      return res.status(400).json({
+        reply: "Please send a message so I can help you.",
+        listings: []
+      });
+    }
+
+    const recommendations = getRecommendedProperties(
+      rawMessage,
+      properties,
+      3
+    );
+
+    if (recommendations.length > 0) {
+      const label =
+        recommendations.length === 1 ? "property" : "properties";
+
+      return res.json({
+        reply: `I found ${recommendations.length} ${label} that match your request. Click a property below to open its details page.`,
+        listings: recommendations
+      });
+    }
 
     const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash"
@@ -39,16 +297,16 @@ You are an AI property assistant for the Grand Abode real estate platform.
 A user is looking for a property.
 
 User request:
-${message}
+${rawMessage}
 
 Here are the available properties in the system:
 ${JSON.stringify(sampleProperties, null, 2)}
 
 Your task:
-- Recommend up to 3 properties that best match the user's request.
-- Include the property type, bedrooms, price, location and URL.
-- Only recommend properties from the provided list.
-- Do NOT ask unnecessary questions.
+- Answer the user in 2-4 sentences.
+- Do not output links, markdown, HTML, file paths, or raw IDs.
+- If recommending properties, mention type, bedrooms, price and location in plain text.
+- Only reference properties from the provided list.
 - Be concise and helpful.
 `;
 
@@ -56,7 +314,7 @@ Your task:
 
     const reply = result.response.text();
 
-    res.json({ reply });
+    res.json({ reply, listings: [] });
 
   } catch (error) {
 
@@ -65,12 +323,14 @@ Your task:
     if (error.status === 429) {
       return res.json({
         reply:
-          "I'm receiving too many requests right now. Please wait about a minute and try again."
+          "I'm receiving too many requests right now. Please wait about a minute and try again.",
+        listings: []
       });
     }
 
     return res.json({
-      reply: "Sorry, something went wrong with the AI service."
+      reply: "Sorry, something went wrong with the AI service.",
+      listings: []
     });
   }
 });

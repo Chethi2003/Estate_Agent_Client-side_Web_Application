@@ -1,5 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./chatBot.css";
+
+function formatPrice(price) {
+  const amount = Number(price);
+
+  if (!Number.isFinite(amount)) {
+    return "Price unavailable";
+  }
+
+  return `£${amount.toLocaleString()}`;
+}
 
 function Chatbot() {
   const [messages, setMessages] = useState([
@@ -46,10 +57,17 @@ function Chatbot() {
         typeof data.reply === "string" && data.reply.trim()
           ? data.reply
           : "I could not generate a response right now. Please try again.";
+      const listings = Array.isArray(data.listings)
+        ? data.listings
+        : [];
 
       setMessages((previousMessages) => [
         ...previousMessages,
-        { role: "assistant", text: replyText },
+        {
+          role: "assistant",
+          text: replyText,
+          listings,
+        },
       ]);
     } catch (_error) {
       setMessages((previousMessages) => [
@@ -79,6 +97,38 @@ function Chatbot() {
           >
             <span className="chatbot-message-role">{msg.role}</span>
             <p>{msg.text}</p>
+
+            {msg.role === "assistant" &&
+              Array.isArray(msg.listings) &&
+              msg.listings.length > 0 && (
+                <ul className="chatbot-listings">
+                  {msg.listings.map((listing, listingIndex) => (
+                    <li
+                      key={`${listing.id || "listing"}-${listingIndex}`}
+                      className="chatbot-listing-item"
+                    >
+                      <Link
+                        to={
+                          listing.pageUrl ||
+                          (listing.id
+                            ? `/property/${listing.id}`
+                            : "/search")
+                        }
+                        className="chatbot-listing-link"
+                      >
+                        <span className="chatbot-listing-title">
+                          {listing.type || "Property"}
+                        </span>
+                        <span className="chatbot-listing-meta">
+                          {Number.isFinite(Number(listing.bedrooms))
+                            ? `${listing.bedrooms} bedrooms`
+                            : "Bedrooms not set"} • {formatPrice(listing.price)} • {listing.location || "Location unavailable"}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
           </div>
         ))}
       </div>
