@@ -21,6 +21,15 @@ const propertiesData = JSON.parse(
 // Extract the actual array
 const properties = propertiesData.properties;
 
+const GREETING_WORDS = [
+  "hi",
+  "hello",
+  "hey",
+  "good morning",
+  "good afternoon",
+  "good evening"
+];
+
 const SEARCH_KEYWORDS = [
   "property",
   "properties",
@@ -83,6 +92,8 @@ const STOP_WORDS = new Set([
   "up",
   "with"
 ]);
+
+
 
 function normalizeText(value = "") {
   return String(value).toLowerCase();
@@ -251,6 +262,10 @@ return candidates
       location: property.location,
       pageUrl: `/property/${property.id}`
     }));
+}
+function isGreeting(message) {
+  const text = normalizeText(message);
+  return GREETING_WORDS.some(word => text.includes(word));
 }
 
 app.post("/chat", async (req, res) => {
