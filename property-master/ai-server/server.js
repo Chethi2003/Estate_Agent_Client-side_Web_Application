@@ -69,6 +69,60 @@ const SEARCH_KEYWORDS = [
   "search"
 ];
 
+const PROPERTY_TYPE_RULES = [
+  {
+    key: "semi-detached",
+    pattern: /\bsemi[-\s]?detached\b/i,
+    matches: (type) => type.includes("semi-detached")
+  },
+  {
+    key: "detached",
+    pattern: /\bdetached\b/i,
+    matches: (type) =>
+      type.includes("detached") && !type.includes("semi-detached")
+  },
+  {
+    key: "terraced",
+    pattern: /\bterraced?\b/i,
+    matches: (type) => type.includes("terraced")
+  },
+  {
+    key: "house",
+    pattern: /\bhouses?\b/i,
+    matches: (type) => type.includes("house")
+  },
+  {
+    key: "flat",
+    pattern: /\bflats?\b/i,
+    matches: (type) => type.includes("flat")
+  },
+  {
+    key: "apartment",
+    pattern: /\bapartments?\b/i,
+    matches: (type) => type.includes("apartment")
+  },
+  {
+    key: "bungalow",
+    pattern: /\bbungalows?\b/i,
+    matches: (type) => type.includes("bungalow")
+  },
+  {
+    key: "villa",
+    pattern: /\bvillas?\b/i,
+    matches: (type) => type.includes("villa")
+  },
+  {
+    key: "penthouse",
+    pattern: /\bpenthouses?\b/i,
+    matches: (type) => type.includes("penthouse")
+  },
+  {
+    key: "studio",
+    pattern: /\bstudios?\b/i,
+    matches: (type) => type.includes("studio")
+  }
+];
+
 const STOP_WORDS = new Set([
   "a",
   "an",
@@ -166,6 +220,39 @@ function extractQueryTerms(rawMessage) {
     .filter((term) => !/^\d+$/.test(term));
 }
 
+function extractRequestedTypes(rawMessage) {
+  const message = normalizeText(rawMessage);
+  const requestedTypes = new Set();
+
+  PROPERTY_TYPE_RULES.forEach((rule) => {
+    if (rule.pattern.test(message)) {
+      requestedTypes.add(rule.key);
+    }
+  });
+
+  const hasSpecificHouseType =
+    requestedTypes.has("semi-detached") ||
+    requestedTypes.has("detached") ||
+    requestedTypes.has("terraced");
+
+  if (hasSpecificHouseType) {
+    requestedTypes.delete("house");
+  }
+
+  return Array.from(requestedTypes);
+}
+
+function propertyMatchesRequestedTypes(propertyType, requestedTypes) {
+  if (requestedTypes.length === 0) return true;
+
+  const normalizedType = normalizeText(propertyType);
+
+  return PROPERTY_TYPE_RULES.some((rule) => {
+    if (!requestedTypes.includes(rule.key)) return false;
+    return rule.matches(normalizedType);
+  });
+}
+
 /* ---------------- SEARCH DETECTION ---------------- */
 
 function isPropertySearch(rawMessage) {
@@ -178,8 +265,9 @@ function isPropertySearch(rawMessage) {
   const hasBudget = extractBudget(message) !== null;
   const hasBedrooms =
     /(\d+)\s*(?:bed|beds|bedroom|bedrooms)\b/i.test(message);
+  const hasPropertyType = extractRequestedTypes(message).length > 0;
 
-  return hasKeyword || hasBudget || hasBedrooms;
+  return hasKeyword || hasBudget || hasBedrooms || hasPropertyType;
 }
 
 /* ---------------- PROPERTY MATCHING ---------------- */
@@ -189,16 +277,25 @@ function getRecommendedProperties(rawMessage, availableProperties) {
 
   const budget = extractBudget(rawMessage);
   const bedrooms = extractBedrooms(rawMessage);
+  const requestedTypes = extractRequestedTypes(rawMessage);
   const queryTerms = extractQueryTerms(rawMessage);
 
-  let candidates = availableProperties.map((property) => {
+  let candidates = availableProperties
+    .filter((property) => {
+      if (budget !== null && property.price > budget) return false;
+      if (bedrooms !== null && property.bedrooms !== bedrooms) return false;
+
+      return propertyMatchesRequestedTypes(property.type, requestedTypes);
+    })
+    .map((property) => {
     let score = 0;
 
     const location = normalizeText(property.location);
     const type = normalizeText(property.type);
 
-    if (budget && property.price <= budget) score += 5;
-    if (bedrooms && property.bedrooms === bedrooms) score += 4;
+    if (budget !== null) score += 5;
+    if (bedrooms !== null) score += 4;
+    if (requestedTypes.length > 0) score += 4;
 
     queryTerms.forEach((term) => {
       if (location.includes(term)) score += 2;
@@ -260,15 +357,23 @@ app.post("/chat", async (req, res) => {
 
     /* Property search */
 
-    const recommendations = getRecommendedProperties(
-      rawMessage,
-      properties
-    );
+    const isSearchIntent = isPropertySearch(rawMessage);
+    const recommendations = isSearchIntent
+      ? getRecommendedProperties(rawMessage, properties)
+      : [];
 
     if (recommendations.length > 0) {
       return res.json({
         reply: `I found ${recommendations.length} properties that match your request.`,
         listings: recommendations
+      });
+    }
+
+    if (isSearchIntent) {
+      return res.json({
+        reply:
+          "I could not find properties that match those filters exactly. Try adjusting your budget, bedrooms, or property type.",
+        listings: []
       });
     }
 
